@@ -99,6 +99,10 @@ y+= (obj_player.y-y)/14;
 
 // DISABLE ALPHABLEND BECAUSE SURFACES //
 draw_enable_alphablend(0);
+draw_set_color(c_black);
+draw_rectangle(0,0,1280,720,false);
+
+draw_set_color(c_white);
 
 var offset = application_get_position();
 
