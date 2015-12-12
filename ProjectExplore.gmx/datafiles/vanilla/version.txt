@@ -1,0 +1,5 @@
+Project Explore 0.3.0.3 Alpha (Vanilla)
+
+// Only the first line of the file is read. You can type whatever you want down here! \\
+|| This build has not been tested much and I can make no promises regarding what does ||
+|| and doesn't work. Enjoy!                                                           ||

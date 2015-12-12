@@ -1,0 +1,10 @@
+name: Nymph SUPER
+desc: A tasty drink that offers you a rush of caffeine!
+spr: mods\sprites\items\spr_item_nymph.png
+stack: 9999
+type: 0
+stat1: 1000
+stat2: 7000
+stat3: 1000
+stat4: 1000
+cook: 0

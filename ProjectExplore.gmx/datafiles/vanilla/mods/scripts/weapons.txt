@@ -1,0 +1,150 @@
+name: Rock
+desc: This can be used as a tool of destruction.
+spr: mods\sprites\items\spr_weapon_rock.png
+stack: 8
+type: 1
+stat1: 15,18,16,16,0,0
+stat2: 15,20,4,15,80,24
+stat3: 0
+stat4: Wood,1,0,0,0,0
+cook: 0,0
+name: Screw Driver
+desc: This can be used as a tool of destruction.
+spr: mods\sprites\items\spr_weapon_screwdriver.png
+stack: 1
+type: 1
+stat1: 15,18,16,16,0,0
+stat2: 20,10,4,10,30,26
+stat3: 0
+stat4: 0,0,0,0,0,0
+cook: 0,0
+name: Knife
+desc: This can be used as a tool of destruction.
+spr: mods\sprites\items\spr_weapon_knife.png
+stack: 1
+type: 1
+stat1: 15,18,16,16,0,0
+stat2: 25,10,4,10,35,28
+stat3: 0
+stat4: 0,0,0,0,0,0
+cook: 0,0
+name: Stone Axe
+desc: This can be used as a tool of destruction.
+spr: mods\sprites\items\spr_weapon_stoneaxe.png
+stack: 1
+type: 1
+stat1: 15,18,16,16,0,0
+stat2: 20,25,4,15,60,32
+stat3: 0
+stat4: Wood,2,0,0,0,0
+cook: 0,0
+name: Stone Pickaxe
+desc: This can be used as a tool of destruction.
+spr: mods\sprites\items\spr_item_stonepick.png
+stack: 1
+type: 1
+stat1: 15,18,16,16,0,0
+stat2: 20,25,5,5,90,32
+stat3: 0
+stat4: 0,0,Rock,1,Metal,1
+cook: 0,0
+name: Metal Pickaxe
+desc: This can be used as a tool of destruction.
+spr: mods\sprites\items\spr_item_metalpick.png
+stack: 1
+type: 1
+stat1: 15,18,16,16,0,0
+stat2: 20,25,5,5,100,32
+stat3: 0
+stat4: 0,0,Rock,2,Metal,2
+cook: 0,0
+name: Metal Axe
+desc: This can be used as a tool of destruction.
+spr: mods\sprites\items\spr_weapon_metalaxe.png
+stack: 1
+type: 1
+stat1: 15,18,16,16,0,0
+stat2: 20,25,4,15,60,32
+stat3: 0
+stat4: Wood,3,0,0,0,0
+cook: 0,0
+name: Wooden Sword
+desc: Good weapon for training and tearing your way through paper enemies!
+spr: mods\sprites\items\spr_weapon_woodsword.png
+stack: 1
+type: 1
+stat1: 24,24,0,0,17,22
+stat2: 5,15,4,15,40,30
+stat3: 0
+stat4: 0,0,0,0,0,0
+cook: 0
+name: Light Metal Sword
+desc: Light but swift, this blade can tear down many foes!
+spr: mods\sprites\items\spr_weapon_lightmetalsword.png
+stack: 1
+type: 1
+stat1: 24,24,0,0,17,22
+stat2: 25,45,4,30,60,30
+stat3: 0
+stat4: 0,0,0,0,0,0
+cook: 0,0
+name: Heavy Metal Sword
+desc: This blade can tear down many foes!
+spr: mods\sprites\items\spr_weapon_heavymetalsword.png
+stack: 1
+type: 1
+stat1: 24,24,0,0,17,22
+stat2: 35,60,5,30,85,30
+stat3: 0
+stat4: 0,0,0,0,0,0
+cook: 0,0
+name: Frying Pan
+desc: This can be used as a tool of destruction.
+spr: mods\sprites\items\spr_weapon_fryingpan.png
+stack: 1
+type: 1
+stat1: 24,24,0,0,17,20
+stat2: 20,25,5,25,60,20
+stat3: 0
+stat4: 0,0,0,0,0,0
+cook: 0,0
+name: Wood Bow
+desc: This bow allows you to make ranged attacks.
+spr: mods\sprites\items\spr_weapon_woodbow.png
+stack: 1
+type: 99
+stat1: 2
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Pistol (9mm)
+desc: A low caliber pistol that takes 9mm ammo.
+spr: mods\sprites\items\spr_weapon_9mmpistol.png
+stack: 1
+type: 99
+stat1: 2
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Warding Stick
+desc: An odd feeling of resistance emanates from it.
+spr: mods\sprites\items\spr_item_wardingstick.png
+stack: 1
+type: 99
+stat1: 2
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Deer Antler
+desc: This can be used as a tool of destruction.
+spr: mods\sprites\items\spr_weapon_deerantler.png
+stack: 1
+type: 1
+stat1: 24,24,0,0,17,20
+stat2: 20,25,5,25,60,20
+stat3: 0
+stat4: 0,0,0,0,0,0
+cook: 0,0

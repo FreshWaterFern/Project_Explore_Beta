@@ -1,0 +1,6 @@
+items: mods\scripts\items.txt
+items: mods\scripts\weapons.txt
+items: mods\scripts\surfaces.txt
+crafting: mods\scripts\crafting.txt
+object: mods\objects\objects.txt
+biome: mods\scripts\biomes.txt

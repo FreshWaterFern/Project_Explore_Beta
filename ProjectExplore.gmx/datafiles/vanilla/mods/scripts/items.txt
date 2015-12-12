@@ -1,0 +1,1360 @@
+name: Nymph
+desc: A tasty drink that offers you a rush of caffeine!
+spr: mods\sprites\items\spr_item_nymph.png
+stack: 8
+type: 0
+stat1: 10,7.5,10,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Honey Bar
+desc: A delicious honey coated granola bar!
+spr: mods\sprites\items\spr_item_honeybar.png
+stack: 8
+type: 0
+stat1: 20,7.5,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Wood
+desc: This can be used when building and crafting.
+spr: mods\sprites\items\spr_item_wood.png
+stack: 16
+type: 100
+stat1: 1
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Foundation
+desc: This is the base of any home.
+spr: mods\sprites\items\spr_item_foundation.png
+stack: 4
+type: 2
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Wall
+desc: These walls can attach to a foundation.
+spr: mods\sprites\items\spr_item_wall.png
+stack: 4
+type: 2
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Ceiling
+desc: This can attach to walls.
+spr: mods\sprites\items\spr_item_ceiling.png
+stack: 4
+type: 2
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Doorway
+desc: This doorway can attach to a foundation.
+spr: mods\sprites\items\spr_item_doorway.png
+stack: 4
+type: 2
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Raw Wolf Meat
+desc: A big ole' chunk of wolf meat.
+spr: mods\sprites\items\spr_item_animalmeat.png
+stack: 5
+type: 0
+stat1: 2.5,10,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 1.25,Cooked Wolf Meat
+name: Broken Clock
+desc: A small golden clock. Not worn down but definitely broken.
+spr: mods\sprites\items\spr_item_broken_clock.png
+stack: 4
+type: 100
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Gear
+desc: Tiny metal gear. Useful when crafting various devices.
+spr: mods\sprites\items\spr_item_gear.png
+stack: 8
+type: 100
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Water Bottle
+desc: A nice room temperature bottle of water!
+spr: mods\sprites\items\spr_item_waterbottle.png
+stack: 8
+type: 0
+stat1: 7.5,0,15,0
+stat2: Empty Bottle
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Vitamin Water
+desc: A nice room temperature bottle of vitamin water!
+spr: mods\sprites\items\spr_item_vitaminwater.png
+stack: 8
+type: 0
+stat1: 15,0,15,0
+stat2: Empty Bottle
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Veggie Water
+desc: A nice room temperature bottle of veggie water!
+spr: mods\sprites\items\spr_item_veggiewater.png
+stack: 8
+type: 0
+stat1: 12.5,0,15,0
+stat2: Empty Bottle
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Stick
+desc: This can be used when building and crafting.
+spr: mods\sprites\items\spr_item_stick.png
+stack: 16
+type: 0
+stat1: 1
+stat2: 0.5
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Pep-D
+desc: A tasty drink that offers you a rush of caffeine!
+spr: mods\sprites\items\spr_item_pepd.png
+stack: 8
+type: 0
+stat1: 12.5,6.5,10,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Canned Fish
+desc: A nice compact can of fish!
+spr: mods\sprites\items\spr_item_canned_fish.png
+stack: 4
+type: 0
+stat1: 15,20,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Dr.Salt
+desc: A tasty drink that offers you a rush of caffeine!
+spr: mods\sprites\items\spr_item_drsalt.png
+stack: 8
+type: 0
+stat1: 12.5,6.5,10,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Small Fire
+desc: Can be ignited to keep you warm and sane through the night.
+spr: mods\sprites\items\spr_item_campfire.png
+stack: 1
+type: 2
+stat1: 96
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Large Crate
+desc: A large storage crate for all your storage needs!
+spr: mods\sprites\items\spr_item_largecrate.png
+stack: 1
+type: 2
+stat1: 96
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Big Fire
+desc: Can be ignited to keep you warm and sane through the night.
+spr: mods\sprites\items\spr_item_bigfire.png
+stack: 1
+type: 2
+stat1: 96
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Torch
+desc: This can be used to find your way in the dark.
+spr: mods\sprites\items\spr_item_torch.png
+stack: 1
+type: 100
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Small Crate
+desc: A small storage crate for all your storage needs!
+spr: mods\sprites\items\spr_item_smallcrate.png
+stack: 1
+type: 2
+stat1: 96
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Cloth
+desc: This can be used when crafting!
+spr: mods\sprites\items\spr_item_cloth.png
+stack: 8
+type: 100
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Animal Fat
+desc: This can be used when crafting!
+spr: mods\sprites\items\spr_item_fat.png
+stack: 8
+type: 100
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Lantern
+desc: Can be ignited to keep you warm and sane through the night.
+spr: mods\sprites\items\spr_item_lantern.png
+stack: 1
+type: 2
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Fence
+desc: This fence can be placed anywhere.
+spr: mods\sprites\items\spr_item_fence.png
+stack: 4
+type: 2
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Tale of Two Maidens and Thy Chalice'
+desc: A good read through and highly rated.
+spr: mods\sprites\items\spr_item_taleoftwogirlsandthychalice.png
+stack: 1
+type: 0
+stat1: 0,0,0,5
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Pragmatic Thinking: Volume I'
+desc: Learn how to think like a programmer.
+spr: mods\sprites\items\spr_item_bigbook_1.png
+stack: 1
+type: 0
+stat1: 0,0,0,5
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Pragmatic Thinking: Volume II'
+desc: Learn how to think like a programmer.
+spr: mods\sprites\items\spr_item_bigbook_2.png
+stack: 1
+type: 0
+stat1: 0,0,0,5
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Mineshaft: Survival Stories'
+desc: A story of one man and his survival in a mineshaft.
+spr: mods\sprites\items\spr_item_bigbook_3.png
+stack: 1
+type: 0
+stat1: 0,0,0,5
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Life Of A Streamer'
+desc: A story about the struggles of an up and coming streamer.
+spr: mods\sprites\items\spr_item_book_2.png
+stack: 1
+type: 0
+stat1: 0,0,0,5
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'How To Not Go Crazy'
+desc: This guide has saved many their own minds.
+spr: mods\sprites\items\spr_item_book_howtonotgocrazy.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Indie Game Developer'
+desc: A beautiful story about one man and his battle with game development.
+spr: mods\sprites\items\spr_item_book_1.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'I Am Leth'
+desc: This book appears to be old and a reference to another world.
+spr: mods\sprites\items\spr_item_book_2.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Lord Of The Jewelry'
+desc: A very dull tale that depicts two midgets carrying jewelry to a hill.
+spr: mods\sprites\items\spr_item_bigbook_3.png
+stack: 1
+type: 0
+stat1: 0,0,0,5
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Canned Fruit
+desc: A can of fruit. Sweet and healthy!
+spr: mods\sprites\items\spr_item_canned_fruit.png
+stack: 4
+type: 0
+stat1: 10,10,7.5,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Canned Clam
+desc: A can of clam. Chunky goodness.
+spr: mods\sprites\items\spr_item_canned_clam.png
+stack: 4
+type: 0
+stat1: 10,10,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Apple Juice
+desc: Sweet and delicious apple juice.
+spr: mods\sprites\items\spr_item_applejuice.png
+stack: 4
+type: 0
+stat1: 5,0,7.5,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Canned Beans
+desc: A can of beans. Baked beans. Yum.
+spr: mods\sprites\items\spr_item_canned_beans.png
+stack: 4
+type: 0
+stat1: 10,10,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Chef Girlardee
+desc: A can of spaghetti. Often referred to as, 'Italy in a can'.
+spr: mods\sprites\items\spr_item_chef_girlardee.png
+stack: 4
+type: 0
+stat1: 10,10,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Crowbar
+desc: This can be used as a tool of destruction.
+spr: mods\sprites\items\spr_weapon_crowbar.png
+stack: 1
+type: 1
+stat1: 2
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Peanut Butter Cookie
+desc: Sweet and delicious goodness. Made of peanut butter and love.
+spr: mods\sprites\items\spr_item_peanutbutter_cookie.png
+stack: 8
+type: 0
+stat1: 5,5,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Cute Bear Doll
+desc: Keep this in your perk slots, it will help you maintain sanity.
+spr: mods\sprites\items\spr_item_teddy1.png
+stack: 1
+type: 99
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Black Jogging Shoes
+desc: Keep this in your perk slots, it will help you move slightly faster.
+spr: mods\sprites\items\spr_item_joggingshoes1.png
+stack: 1
+type: 99
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Red Jogging Shoes
+desc: Keep this in your perk slots, it will help you move slightly faster.
+spr: mods\sprites\items\spr_item_joggingshoes2.png
+stack: 1
+type: 99
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Black Running Shoes
+desc: Keep this in your (perks section) will help you move much faster.
+spr: mods\sprites\items\spr_item_runningshoes1.png
+stack: 1
+type: 99
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Wood Door
+desc: This door can be put in a doorway.
+spr: mods\sprites\items\spr_item_door.png
+stack: 4
+type: 2
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Arrow
+desc: Arrows used by the wood bow.
+spr: mods\sprites\items\spr_item_arrow.png
+stack: 16
+type: 100
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Fifty Shades Of Grass'
+desc: Awarded as a story of dirt and gravel.
+spr: mods\sprites\items\spr_item_bigbook_3.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 9mm Bullet
+desc: A 9mm bullet for any weapon that takes this type of ammo.
+spr: mods\sprites\items\spr_item_9mmbullet.png
+stack: 48
+type: 100
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Metal
+desc: This can be used to craft metal objects.
+spr: mods\sprites\items\spr_item_metal.png
+stack: 16
+type: 100
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Screw
+desc: This can be used when crafting.
+spr: mods\sprites\items\spr_item_screw.png
+stack: 16
+type: 100
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Spring
+desc: This can be used when crafting.
+spr: mods\sprites\items\spr_item_spring.png
+stack: 16
+type: 100
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 9mm Pistol Magazine
+desc: This can be used when crafting a 9mm pistol.
+spr: mods\sprites\items\spr_item_9mmpistolmag.png
+stack: 1
+type: 100
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Hammer
+desc: This can be used to deconstruct or upgrade your structures.
+spr: mods\sprites\items\spr_item_hammer.png
+stack: 1
+type: 1
+stat1: 8
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Flashlight
+desc: This can be used to fight your inner demons.
+spr: mods\sprites\items\spr_item_flashlight.png
+stack: 1
+type: 1
+stat1: 10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Raw Bear Meat
+desc: A big ole' chunk of bear meat.
+spr: mods\sprites\items\spr_item_animalmeat.png
+stack: 5
+type: 0
+stat1: 2.5,10,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 1.25
+name: String
+desc: This an be used when crafting.
+spr: mods\sprites\items\spr_item_string.png
+stack: 16
+type: 100
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Trout (Fish)
+desc: A salty and slimey delight!
+spr: mods\sprites\items\spr_item_fish_trout.png
+stack: 5
+type: 0
+stat1: 5,7.5,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 1.1
+name: Fishing Rod
+desc: This can be used to catch fish in any body of water.
+spr: mods\sprites\items\spr_item_fishingrod.png
+stack: 1
+type: 1
+stat1: 11
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Seabass (Fish)
+desc: A salty and slimey delight!
+spr: mods\sprites\items\spr_item_fish_seabass.png
+stack: 5
+type: 0
+stat1: 5
+stat2: 7.5
+stat3: 0
+stat4: 0
+cook: 1.1
+name: Halibut (Fish)
+desc: A salty and slimey delight!
+spr: mods\sprites\items\spr_item_fish_halibut.png
+stack: 5
+type: 0
+stat1: 5,7.5,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 1.1
+name: Pink Salmon (Fish)
+desc: A salty and slimey delight!
+spr: mods\sprites\items\spr_item_fish_pinksalmon.png
+stack: 5
+type: 0
+stat1: 5,7.5,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 1.1
+name: Pillar
+desc: These pillars can attach to a foundation.
+spr: mods\sprites\items\spr_item_pillar.png
+stack: 4
+type: 2
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Carrying Lantern
+desc: Keep this in your (perks section) to put a lantern on your hip.
+spr: mods\sprites\items\spr_item_carryinglantern.png
+stack: 1
+type: 100
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'How To Train A Bear'
+desc: This is a story about a boy and his bear.
+spr: mods\sprites\items\spr_item_book_3.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Compass
+desc: This item will assist you when navigating the world.
+spr: mods\sprites\items\spr_item_compass.png
+stack: 1
+type: 5
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Rusty: Video Game Survival Guide'
+desc: A guide to beating a survival game from long ago.
+spr: mods\sprites\items\spr_item_book_2.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Swimming With Seabass' (Volume I)'
+desc: A self exploration experience revealing ones deepest desires.
+spr: mods\sprites\items\spr_item_bigbook_1.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Raw Deer Meat
+desc: A big ole' chunk of deer meat.
+spr: mods\sprites\items\spr_item_animalmeat.png
+stack: 5
+type: 0
+stat1: 2.5,10,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 1.25
+name: 'The Great Frisbee'
+desc: A wealthy frisbee finds himself alone with his money.
+spr: mods\sprites\items\spr_item_book_1.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Lord of the Pies'
+desc: A plane crashes leaving a group of children alone on a pie island.
+spr: mods\sprites\items\spr_item_book_3.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Of Toast and Bread'
+desc: Will two men make it in the tough early years of American industry?
+spr: mods\sprites\items\spr_item_book_2.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Where The Normal Things Are'
+desc: A boy has a boring dream about normal creatures in his every day life.
+spr: mods\sprites\items\spr_item_book_1.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'The Tom Hank Redemption'
+desc: Follow Tom Hank's journey through his life as a janitor at a prison.
+spr: mods\sprites\items\spr_item_book_3.png
+stack: 1
+type: 0
+stat1: 0,0,0,5
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'The Godmother'
+desc: An Italian mother raises a family of criminals.
+spr: mods\sprites\items\spr_item_bigbook_2.png
+stack: 1
+type: 0
+stat1: 0,0,0,5
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: '28 Days Prior'
+desc: A book showing the world just before a massive zombie breakout.
+spr: mods\sprites\items\spr_item_book_28daysprior.png
+stack: 1
+type: 0
+stat1: 0,0,0,5
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Above Average Hero 6'
+desc: A book about a slighty above average blow up doll.
+spr: mods\sprites\items\spr_item_book_1.png
+stack: 1
+type: 0
+stat1: 0,0,0,5
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'The Silence of the Goats'
+desc: A book about a serial killer goat.
+spr: mods\sprites\items\spr_item_book_3.png
+stack: 1
+type: 0
+stat1: 0,0,0,5
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Raiders of the Old Park'
+desc: Follow Oklahoma Jones on his joureny to the park.
+spr: mods\sprites\items\spr_item_book_2.png
+stack: 1
+type: 0
+stat1: 0,0,0,5
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Bandage
+desc: Can be used to stop bleeding.
+spr: mods\sprites\items\spr_item_bandage.png
+stack: 1
+type: 15
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Small Table
+desc: Used as a display for items, really brightens your living room.
+spr: mods\sprites\items\spr_item_smalltable.png
+stack: 1
+type: 15
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Empty Bottle
+desc: An empty bottle of nothing. It can be refilled with water.
+spr: mods\sprites\items\spr_item_emptybottle.png
+stack: 1
+type: 16
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Wood Chair
+desc: It's a nice place to sit.
+spr: mods\sprites\items\spr_item_woodchair.png
+stack: 1
+type: 2
+stat1: 96
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Wood Chest
+desc: A decently sized chest for all your storage needs!
+spr: mods\sprites\items\spr_item_woodchest.png
+stack: 1
+type: 15
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Bear Hide Mantle
+desc: Can be worn to protect yourself against physical harm.
+spr: mods\sprites\items\spr_item_bearhide_mantle.png
+stack: 1
+type: 3
+stat1: mods\sprites\clothing\spr_clothing_bearhide_mantle.png
+stat2: 0.15,0.05
+stat3: 0,5
+stat4: 0,1
+cook: 0,0
+name: Hide Armor (Mk1)
+desc: Can be worn to protect yourself against physical harm.
+spr: mods\sprites\items\spr_item_hidearmor_mk1.png
+stack: 1
+type: 3
+stat1: mods\sprites\clothing\spr_clothing_hidearmor_mk1.png
+stat2: 0.15,0.05
+stat3: 0,5
+stat4: 0,1
+cook: 0,0
+name: Hide Cap (Mk1)
+desc: Can be worn to protect yourself against physical harm.
+spr: mods\sprites\items\spr_item_hidecap_mk1.png
+stack: 1
+type: 3
+stat1: mods\sprites\clothing\spr_clothing_hidecap_mk1.png
+stat2: 0.1,0
+stat3: 0,5
+stat4: 1,0
+cook: 0,0
+name: Wolf Hood
+desc: Can be worn to protect yourself against physical harm.
+spr: mods\sprites\items\spr_item_wolfhood.png
+stack: 1
+type: 3
+stat1: mods\sprites\clothing\spr_clothing_wolfhood.png
+stat2: 0.1,0
+stat3: 0.1,5
+stat4: 1,0
+cook: 0,0
+name: Flag (Red)
+desc: A flag used to place waypoints for the compass.
+spr: mods\sprites\items\spr_item_flag_red.png
+stack: 1
+type: 20
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Game Of Toads'
+desc: A bunch of stuck up toads slaughter each other in a last stand#deathmatch for control of a pond.
+spr: mods\sprites\items\spr_item_book_1.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Jordan Greenman, White Mesa'
+desc: A scientist turns from a silent man to a mute with great combat#skills and way too much blood on his hands.
+spr: mods\sprites\items\spr_item_book_2.png
+stack: 1
+type: 0
+stat1: 0,0,0,15
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Eat, Build, Read, Repeat'
+desc: Proclaimed by many as one of the greatest books of it's time.#A guide to survival in the wilderness portrayed as a life style.
+spr: mods\sprites\items\spr_item_book_3.png
+stack: 1
+type: 0
+stat1: 0,0,0,15
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'The Walking Bed'
+desc: A fantasy story about a bed that grows legs and walks across#the land eating other beds.
+spr: mods\sprites\items\spr_item_book_1.png
+stack: 1
+type: 0
+stat1: 0,0,0,5
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Flag (Blue)
+desc: A flag used to place waypoints for the compass.
+spr: mods\sprites\items\spr_item_flag_blue.png
+stack: 1
+type: 20
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Flag (Green)
+desc: A flag used to place waypoints for the compass.
+spr: mods\sprites\items\spr_item_flag_green.png
+stack: 1
+type: 20
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Flag (Pink)
+desc: A flag used to place waypoints for the compass.
+spr: mods\sprites\items\spr_item_flag_pink.png
+stack: 1
+type: 20
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Flag (Purple)
+desc: A flag used to place waypoints for the compass.
+spr: mods\sprites\items\spr_item_flag_purple.png
+stack: 1
+type: 20
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Flag (Yellow)
+desc: A flag used to place waypoints for the compass.
+spr: mods\sprites\items\spr_item_flag_yellow.png
+stack: 1
+type: 20
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Flag (Orange)
+desc: A flag used to place waypoints for the compass.
+spr: mods\sprites\items\spr_item_flag_orange.png
+stack: 1
+type: 20
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Flag (Cyan)
+desc: A flag used to place waypoints for the compass.
+spr: mods\sprites\items\spr_item_flag_cyan.png
+stack: 1
+type: 20
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Flag (White)
+desc: A flag used to place waypoints for the compass.
+spr: mods\sprites\items\spr_item_flag_white.png
+stack: 1
+type: 20
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Flag (Black)
+desc: A flag used to place waypoints for the compass.
+spr: mods\sprites\items\spr_item_flag_black.png
+stack: 1
+type: 20
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Corn Seeds
+desc: Seeds that when placed will begin to grow a stalk of corn.
+spr: mods\sprites\items\spr_item_corn_seed1.png,mods\plants\corn\spr_plant_corn_0.png,mods\plants\corn\spr_plant_corn_1.png,mods\plants\corn\spr_plant_corn_2.png,mods\plants\corn\spr_plant_corn_3.png,mods\plants\corn\spr_plant_corn_4.png,mods\plants\corn\spr_plant_corn_5.png,mods\plants\corn\spr_plant_corn_6.png,mods\plants\corn\spr_plant_corn_7.png,mods\plants\corn\spr_plant_corn_8.png,mods\plants\corn\spr_plant_corn_9.png,mods\plants\corn\spr_plant_corn_10.png,mods\plants\corn\spr_plant_corn_11.png,mods\plants\corn\spr_plant_corn_12.png,mods\plants\corn\spr_plant_corn_13.png,mods\plants\corn\spr_plant_corn_14.png,mods\plants\corn\spr_plant_corn_15.png,mods\plants\corn\spr_plant_corn_16.png,mods\plants\corn\spr_plant_corn_17.png,mods\plants\corn\spr_plant_corn_18.png,mods\plants\corn\spr_plant_corn_19.png
+stack: 16
+type: 4
+stat1: 0,0,0,0
+stat2: 0.0003,20,96
+stat3: Corn Seeds,1,Corn,1
+stat4: 0,0,1,3
+cook: 0,0
+name: Corn
+desc: Fresh corn! Each bite is delicious!
+spr: mods\sprites\items\spr_item_corn.png
+stack: 8
+type: 0
+stat1: 2.5,6,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Potato
+desc: Fresh potato! Each bite is delicious!#You can even grow more!
+spr: mods\sprites\items\spr_item_potato.png,mods\plants\potato\spr_plant_potato_0.png,mods\plants\potato\spr_plant_potato_1.png,mods\plants\potato\spr_plant_potato_2.png,mods\plants\potato\spr_plant_potato_3.png,mods\plants\potato\spr_plant_potato_4.png,mods\plants\potato\spr_plant_potato_5.png,mods\plants\potato\spr_plant_potato_6.png,mods\plants\potato\spr_plant_potato_7.png,mods\plants\potato\spr_plant_potato_8.png,mods\plants\potato\spr_plant_potato_9.png
+stack: 8
+type: 4
+stat1: 2.5,6,0,0
+stat2: 0.0003,10,96
+stat3: Potato,1,Potato,2
+stat4: 0,0,0,0
+cook: 0,0
+name: Tomato
+desc: Fresh tomato! Each bite is juicy and delicious!
+spr: mods\sprites\items\spr_item_tomato.png
+stack: 8
+type: 0
+stat1: 4,5,2.5,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Tomato Seeds
+desc: Seeds that when placed will begin to grow tomatoes.
+spr: mods\sprites\items\spr_item_tomato_seed1.png,mods\plants\tomato\spr_plant_tomato_0.png,mods\plants\tomato\spr_plant_tomato_1.png,mods\plants\tomato\spr_plant_tomato_2.png,mods\plants\tomato\spr_plant_tomato_3.png,mods\plants\tomato\spr_plant_tomato_4.png,mods\plants\tomato\spr_plant_tomato_5.png,mods\plants\tomato\spr_plant_tomato_6.png,mods\plants\tomato\spr_plant_tomato_7.png,mods\plants\tomato\spr_plant_tomato_8.png,mods\plants\tomato\spr_plant_tomato_9.png,mods\plants\tomato\spr_plant_tomato_10.png,mods\plants\tomato\spr_plant_tomato_11.png
+stack: 16
+type: 4
+stat1: 0,0,0,0
+stat2: 0.0003,12,96
+stat3: Tomato Seeds,1,Tomato,2
+stat4: 0,0,1,4
+cook: 0,0
+name: Forging Table
+desc: Used to craft more complex metal items.
+spr: mods\sprites\items\spr_item_forgingtable.png
+stack: 1
+type: 12
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Deconstruction Table
+desc: Used to take apart items.
+spr: mods\sprites\items\spr_item_deconstructtable.png
+stack: 1
+type: 12
+stat1: 0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Cooked Wolf Meat
+desc: A well cooked peice of wolf meat.
+spr: mods\sprites\items\spr_item_cookedanimalmeat.png
+stack: 5
+type: 0
+stat1: 20,40,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Cooked Bear Meat
+desc: A well cooked peice of bear meat.
+spr: mods\sprites\items\spr_item_cookedanimalmeat.png
+stack: 5
+type: 0
+stat1: 20,40,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Cooked Deer Meat
+desc: A well cooked peice of deer meat.
+spr: mods\sprites\items\spr_item_cookedanimalmeat.png
+stack: 5
+type: 0
+stat1: 20,40,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Wallet
+desc: A quaint and somewhat worn out wallet.
+spr: mods\sprites\items\spr_item_wallet.png
+stack: 8
+type: 10
+stat1: 1
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Rag
+desc: A dirty and used rag.
+spr: mods\sprites\items\spr_item_rag.png
+stack: 8
+type: 10
+stat1: 1
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Cooked Trout (Fish)
+desc: A crunchy, salty, and slimey delight!
+spr: mods\sprites\items\spr_item_fish_trout_cooked.png
+stack: 8
+type: 0
+stat1: 10,15,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Cooked Seabass (Fish)
+desc: A crunchy, salty, and slimey delight!
+spr: mods\sprites\items\spr_item_fish_seabass_cooked.png
+stack: 8
+type: 0
+stat1: 10,15,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Cooked Halibut (Fish)
+desc: A crunchy, salty, and slimey delight!
+spr: mods\sprites\items\spr_item_fish_halibut_cooked.png
+stack: 8
+type: 0
+stat1: 10,15,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Cooked Pink Salmon (Fish)
+desc: A crunchy, salty, and slimey delight!
+spr: mods\sprites\items\spr_item_fish_pinksalmon_cooked.png
+stack: 8
+type: 0
+stat1: 10,15,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Pencil
+desc: A cheap and flimsy pencil.
+spr: mods\sprites\items\spr_item_pencil.png
+stack: 8
+type: 100
+stat1: 1
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Wood Photo Frame
+desc: An old style photo frame made from thin wood.
+spr: mods\sprites\items\spr_item_woodphotoframe.png
+stack: 8
+type: 100
+stat1: 1
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Wood Wash Board
+desc: Used to clean dirty cloth and rags.
+spr: mods\sprites\items\spr_item_woodwashboard.png
+stack: 4
+type: 100
+stat1: 1
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Towel
+desc: Used to dry surfaces.
+spr: mods\sprites\items\spr_item_towel.png
+stack: 8
+type: 100
+stat1: 1
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Small Bag
+desc: Used to carry small objects. Not very useful to a real adventurer.
+spr: mods\sprites\items\spr_item_smallbag.png
+stack: 8
+type: 100
+stat1: 1
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Blue Sock
+desc: Worn by a similar creature.
+spr: mods\sprites\items\spr_item_bluesock.png
+stack: 8
+type: 100
+stat1: 1
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Red Sock
+desc: Worn by a similar creature.
+spr: mods\sprites\items\spr_item_redsock.png
+stack: 8
+type: 0
+stat1: 100
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Cloth Headwrap
+desc: Can be worn to protect yourself against harsh weather.
+spr: mods\sprites\items\spr_item_cloth_headwrap.png
+stack: 1
+type: 3
+stat1: mods\sprites\clothing\spr_clothing_headwrap.png
+stat2: 0.1,0
+stat3: 1,5
+stat4: 1,0
+cook: 0,0
+name: Orange Juice
+desc: Sweet and delicious orange juice.
+spr: mods\sprites\items\spr_item_orangejuice.png
+stack: 4
+type: 0
+stat1: 5,5,7.5,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Rice Milk
+desc: Bland but healthy rice milk.
+spr: mods\sprites\items\spr_item_ricemilk.png
+stack: 4
+type: 100
+stat1: 2.5,2.5,6.5,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Leaf
+desc: Can be used to fuel fires.
+spr: mods\sprites\items\spr_item_leaf.png
+stack: 8
+type: 100
+stat1: 1
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'The Haze'
+desc: A blurred past leads to a future in which Haze must#overcome the environment and his own mental dilemma.
+spr: mods\sprites\items\spr_item_book_3.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'Camo's Ham'
+desc: A story about a very unique piece of ham that brings#old rivals back together for a final battle.
+spr: mods\sprites\items\spr_item_bigbook_2.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'My Dear Pepe'
+desc: Love has never been so hard. Pepe is forced to#leave everything behind so he can avenge his best friend.
+spr: mods\sprites\items\spr_item_book_mydearpepe.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: 'How To Get An Achievement'
+desc: A guide on how to earn achievements in both#life and video games.
+spr: mods\sprites\items\spr_item_book_howtogetanachievement.png
+stack: 1
+type: 0
+stat1: 0,0,0,10
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Red Berries
+desc: These berries are delicious and healthy.
+spr: mods\sprites\items\spr_item_redberry.png
+stack: 48
+type: 0
+stat1: 1,1.5,0,0
+stat2: 0
+stat3: 0
+stat4: 0
+cook: 0,0
+name: Shovel
+desc: This can be used to dig up terrain.
+spr: mods\sprites\items\spr_item_shovel.png
+stack: 1
+type: 6
+stat1: 15,18,16,16,0,0
+stat2: 20,25,4,15,60,32
+stat3: 0
+stat4: 0
+cook: 0,0
