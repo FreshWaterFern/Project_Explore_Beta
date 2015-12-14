@@ -32,7 +32,7 @@ depth_update = false;
 resource_id = 3;
 resource_count = 8;
 resource_max = 8;
-height = 96;
+height1 = 96;
 height_depth = 96;
 index = 0;
 
@@ -91,7 +91,7 @@ ai_grid_remove_self(x-(sprite_width/2),y-(sprite_height/2),x+(sprite_width/2),y+
           <argument>
             <kind>1</kind>
             <string>/// Add To World Data &amp; AI Grid
-height_depth = height*4;
+height_depth = height1*4;
 ai_grid_add_self(x-(sprite_width/2),y-(sprite_height/2),x+(sprite_width/2),y+(sprite_height/2));
 world_obj_add(id);
 </string>

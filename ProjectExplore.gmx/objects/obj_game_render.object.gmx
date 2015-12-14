@@ -252,6 +252,8 @@ global.textures_loaded = true;
             <kind>1</kind>
             <string>/// Graphics Initialize
 
+application_surface_draw_enable(false);
+
 /*
 display_reset(0,obj_game.m_vsync);
 ini_open("settings.ini");

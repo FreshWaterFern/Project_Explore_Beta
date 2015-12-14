@@ -45,9 +45,11 @@ if ( active == true )
                 inventory_add(item_give,floor(leaf_status),false);
                 leaf_status = 0;
             }}
-        }
-    }}
-}}
+        }else{selected = false;}
+    }else{selected = false;}
+    }else{selected = false;}
+}else{selected = false;}
+}
 </string>
           </argument>
         </arguments>

@@ -78,7 +78,7 @@ y+= (obj_player.y-y)/14;
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="75">
+    <event eventtype="8" enumb="77">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -95,20 +95,19 @@ y+= (obj_player.y-y)/14;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-/// Render Application
+            <string>/// Render Application
 
 // DISABLE ALPHABLEND BECAUSE SURFACES //
 draw_enable_alphablend(0);
 draw_set_color(c_black);
-draw_rectangle(0,0,1280,720,false);
+draw_rectangle(view_xview[0],view_yview[0],view_xview[0]+1280,view_yview[0]+720,false);
 
 draw_set_color(c_white);
 
 var offset = application_get_position();
 
 res_x = window_get_width();res_y = window_get_height();
-better_scaling_draw_surface(application_surface,offset[0],offset[1],res_x/1280,res_y/720,0,c_white,1,obj_main_logic.g_sampling+1);
+better_scaling_draw_surface(application_surface,0,0,res_x/1280,res_y/720,0,c_white,1,obj_main_logic.g_sampling+1);
 
 var base_h = 720;
 var aspect = res_x/res_y;
@@ -472,29 +471,25 @@ draw_set_color(c_white);draw_set_alpha(1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Render Application
-
-// DISABLE ALPHABLEND BECAUSE SURFACES //
-draw_enable_alphablend(0);
-draw_set_color(c_black);
-draw_rectangle(0,0,1280,720,false);
-
-draw_set_color(c_white);
-
-var offset = application_get_position();
-
-res_x = window_get_width();res_y = window_get_height();
-better_scaling_draw_surface(application_surface,0,0,res_x/1280,res_y/720,0,c_white,1,obj_main_logic.g_sampling+1);
-
-var base_h = 720;
-var aspect = res_x/res_y;
-var ww = display_get_width();
-var hh = display_get_height();
-
-if ( ww/hh &lt; 1.76 or ww/hh &gt; 1.79 ){
-display_set_gui_maximise(res_x,res_y, 0, res_y-(res_y*1.7777));}
-
-draw_enable_alphablend(1);
+            <string>/// Draw Mouse Prompt
+if ( instance_exists(obj_water_parent) ){
+with(obj_player){
+var sprite_set = spr_mouse_image;
+if ( pl_refill_display == true )
+    {
+    draw_set_alpha(1);draw_set_color(c_white);
+    draw_sprite(sprite_set,mouse_frames,x,y-48);
+    mouse_frames += 0.025;
+    if ( mouse_frames &gt;= 2 ){mouse_frames = 0;}
+    }
+if ( global.fishing_water_id != noone &amp;&amp; global.tablet_mode == 0 )
+{if ( global.fishing_water_id.fishing == false ){
+    draw_set_alpha(1);draw_set_color(c_white);
+    draw_sprite(sprite_set,mouse_frames,x,y-48);
+    mouse_frames += 0.025;
+    if ( mouse_frames &gt;= 2 ){mouse_frames = 0;}
+}}
+}}
 </string>
           </argument>
         </arguments>
@@ -749,6 +744,237 @@ if(glow_effect){draw_sprite_ext(spr_lightglow_1,0,x,y,random(1),random(1),0,col_
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Object Placement &amp; Player
+if ( instance_exists(obj_player) ){
+with(obj_player){
+if ( v_item_equipped &gt; 0 ){
+if ( global.item_data[#v_item_equipped,4] == 2 ){ // Is it a world placement item?
+var obj_id = db_object_get_name(global.item_data[#v_item_equipped,0]);
+var place_sprite = global.object_data[#obj_id,2];
+var is_rot = real(global.object_data[#obj_id,6]);
+
+// Handle mouse movement and limited distance placement
+var get_dir = point_direction(x,y,mouse_x,mouse_y);
+if ( point_distance(x,y,mouse_x,mouse_y) &gt; real(global.item_data[#v_item_equipped,5]) )
+{v_con_x = x+lengthdir_x(real(global.item_data[#v_item_equipped,5]),get_dir);v_con_y = y+lengthdir_y(real(global.item_data[#v_item_equipped,5]),get_dir);}
+else
+{v_con_x = mouse_x;v_con_y = mouse_y;}
+
+// Handle rotations
+if ( is_rot ){
+if ( mouse_wheel_up() ){v_con_angle += 90;}
+if ( mouse_wheel_down() ){v_con_angle -= 90;}
+if ( v_con_angle &gt;= 360 ){v_con_angle = 0;}
+if ( v_con_angle &lt;= -90 ){v_con_angle = 270;}}
+
+// Check for water and collisions
+var width = sprite_get_width(place_sprite)*0.5;var height = sprite_get_height(place_sprite)*0.5;var v_con_col = false;
+if ( collision_rectangle(v_con_x-width,v_con_y-height,v_con_x+width,v_con_y+height,obj_solid_parent,false,true) != noone ){v_con_col = true;}else{
+if ( collision_rectangle(v_con_x-width,v_con_y-height,v_con_x+width,v_con_y+height,obj_player,false,false) != noone ){v_con_col = true;}else{
+if ( collision_rectangle(v_con_x-width,v_con_y-height,v_con_x+width,v_con_y+height,obj_water_parent,false,true) != noone ){v_con_col = true;
+if ( collision_rectangle(v_con_x-width,v_con_y-height,v_con_x+width,v_con_y+height,obj_foundation_parent,false,true) != noone ){v_con_col = false;}}}}
+if ( v_con_col == false ){
+if ( mouse_check_button_pressed(mb_left) ){var obj_inst = 0;
+switch(global.object_data[#obj_id,3]){
+case 0:{obj_inst=obj_archetype_storage;break;}
+case 1:{obj_inst=obj_archetype_basic;break;}
+case 2:{obj_inst=obj_archetype_cooking;break;}}
+player_create_object(v_con_x,v_con_y,obj_inst,v_con_angle); // Create instance
+inventory_get_item(v_item_equipped,1,1);// Clear it from inventory
+}}
+
+// Draw hitbox
+if ( !v_con_col ){var col = c_green;}else{var col = c_red;}
+draw_sprite_ext(place_sprite,0,v_con_x,v_con_y,1,1,v_con_angle,col,0.75);
+
+// Show arrow to indicate facing direction
+draw_set_color(c_black);draw_set_alpha(0.5);
+if ( is_rot ){
+var dist = sprite_get_width(place_sprite)/1.5;
+switch(v_con_angle){
+case 0:draw_arrow(v_con_x-(dist*0.5),v_con_y,v_con_x+(dist*0.5),v_con_y,5)break;
+case 90:draw_arrow(v_con_x,v_con_y+(dist*0.5),v_con_x,v_con_y-(dist*0.5),5)break;
+case 180:draw_arrow(v_con_x+(dist*0.5),v_con_y,v_con_x-(dist*0.5),v_con_y,5)break;
+case 270:draw_arrow(v_con_x,v_con_y-(dist*0.5),v_con_x,v_con_y+(dist*0.5),5)break;
+}}draw_set_color(c_white);draw_set_alpha(1);
+
+}
+
+
+
+if ( global.item_data[#v_item_equipped,4] == 4 ){ // Is it a plantable item?
+var _id = v_item_equipped;
+var spr_list = global.item_data[#_id,2];
+var place_sprite = spr_list[|ds_list_size(spr_list)-1];
+var list = convert_string_to_list(global.item_data[#_id,6],",");
+var place_range = real(list[|2]);ds_list_destroy(list);
+
+// Handle mouse movement and limited distance placement
+var get_dir = point_direction(x,y,mouse_x,mouse_y);
+if ( point_distance(x,y,mouse_x,mouse_y) &gt; place_range )
+{v_con_x = x+lengthdir_x(real(place_range),get_dir);v_con_y = y+lengthdir_y(place_range,get_dir);}
+else
+{v_con_x = mouse_x;v_con_y = mouse_y;}
+
+v_con_x = (round(v_con_x/32))*32;v_con_y = (round(v_con_y/32))*32;
+
+
+// Check for water and collisions
+var width = sprite_get_width(place_sprite)*0.5;var height = sprite_get_height(place_sprite)*0.5;var v_con_col = false;
+if ( collision_rectangle(v_con_x-width,v_con_y-height,v_con_x+width,v_con_y+height,obj_solid_parent,false,true) != noone ){v_con_col = true;}else{
+if ( collision_rectangle(v_con_x-width,v_con_y-height,v_con_x+width,v_con_y+height,obj_water_parent,false,true) != noone ){v_con_col = true;
+if ( collision_rectangle(v_con_x-width,v_con_y-height,v_con_x+width,v_con_y+height,obj_foundation_parent,false,true) != noone ){v_con_col = false;}}}
+if ( v_con_col == false ){
+if ( mouse_check_button_pressed(mb_left) ){var obj_inst = 0;
+player_create_plant(v_con_x,v_con_y); // Create instance
+inventory_get_item(v_item_equipped,1,1);// Clear it from inventory
+}}
+
+// Draw hitbox
+if ( !v_con_col ){var col = c_green;}else{var col = c_red;}
+var spr_height2 = sprite_external_get_height(ds_list_find_value(global.item_data[#_id,2],1));
+draw_external_sprite_ext(place_sprite,0,v_con_x,v_con_y+(spr_height2/2)-4,1,1,0,col,0.75);
+draw_set_color(c_white);draw_set_alpha(1);
+}}
+
+if ( global.render_characters == true )
+{
+var v_color = c_white;
+if ( v_is_moving == true )
+{
+if ( keyboard_check(key_walk_main) or keyboard_check(key_walk_alt) )
+{
+image_speed = 0.25;
+}
+else
+{
+image_speed = 0.45;
+}
+}
+else
+{
+image_index = 0;
+image_speed = 0;
+}
+
+if ( v_item_equipped &gt; 0 ){
+var item_type = global.item_data[#v_item_equipped,4];
+if ( item_type == 1 or item_type == 6 ){ // If the item is the correct type to be drawn on the player
+var list = convert_string_to_list(global.item_data[#v_item_equipped,5],",");
+var spr_item = global.item_data[#v_item_equipped,2];
+if ( real(list[|4]) != 0 &amp;&amp; real(list[|5]) != 0 ){
+sprite_external_set_offset(spr_item,real(list[|4]),real(list[|5]));}
+//draw_external_sprite(spr_item,0,x,y);
+var y_math = y+lengthdir_y(real(list[|1]),direction+real(list[|3]));
+var x_math = x+lengthdir_x(real(list[|0]),direction+real(list[|2]));
+draw_external_sprite_ext(spr_item,1,x_math,y_math,0.8,0.8,image_angle,c_white,1);
+spr = global.ds_char_skin_item[| global.char_skin];
+draw_sprite_ext(spr,image_index,x,y,1,1,image_angle,c_white,1);
+ds_list_destroy(list);
+sprite_external_set_offset(spr_item,sprite_external_get_width(spr_item)/2,sprite_external_get_height(spr_item)/2);
+}}
+
+var spr = global.ds_char_legs[| global.char_legs];
+draw_sprite_ext(spr,image_index,x,y,1,1,image_angle,c_white,1);
+
+if ( v_draw_equipped == false )
+{
+spr = global.ds_char_skin_noitem[| global.char_skin];
+draw_sprite_ext(spr,image_index,x,y,1,1,image_angle,c_white,1);
+}
+
+spr = global.ds_char_shirt[| global.char_shirt];
+draw_sprite_ext(spr,image_index,x,y,1,1,image_angle,c_white,1);
+
+// Body Clothing
+if ( global.clothing_body != "" )
+{spr = global.item_data[#global.equip_list[|1],5];
+draw_external_sprite_ext(spr,0,x,y,1,1,image_angle,c_white,1);
+}
+
+// Head Clothing
+if ( global.clothing_head != "" )
+{spr = global.item_data[#global.equip_list[|0],5];
+draw_external_sprite_ext(spr,0,x,y,1,1,image_angle,c_white,1);
+}
+else
+{
+// Render Hair
+switch(global.char_hair_style)
+{
+    case 0:
+    {
+    spr = global.ds_char_hair1[| global.char_hair_color];break;
+    }
+    case 1:
+    {
+    spr = global.ds_char_hair2[| global.char_hair_color];break;
+    }
+    case 2:
+    {
+    spr = global.ds_char_hair3[| global.char_hair_color];break;
+    }
+    case 3:
+    {
+    spr = global.ds_char_hair4[| global.char_hair_color];break;
+    }
+    case 4:
+    {
+    spr = global.ds_char_hair5[| global.char_hair_color];break;
+    }
+    case 5:
+    {
+    spr = global.ds_char_hair6[| global.char_hair_color];break;
+    }
+    case 6:
+    {
+    spr = global.ds_char_hair7[| global.char_hair_color];break;
+    }
+    case 7:
+    {
+    spr = global.ds_char_hair8[| global.char_hair_color];break;
+    }
+    case 8:
+    {
+    spr = global.ds_char_hair9[| global.char_hair_color];break;
+    }
+}
+draw_sprite_ext(spr,image_index,x,y,1,1,image_angle,c_white,1);
+}
+
+// Render Water Refill Rate
+if ( pl_water_refill &gt; 0 )
+{
+draw_set_alpha(1);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_font(font_verdana_12);
+draw_text_outline(string(pl_water_refill)+"%",x,y-28,c_white,c_black);
+}
+
+}
+
+}}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Render World Objects Part II ( Batches )
 
 if ( !global.game_pause ){
@@ -774,11 +1000,11 @@ draw_set_blend_mode(bm_normal);
 if (instance_exists(obj_world_tree_1)){
 with(obj_world_tree_1){
 if ( active == true ){// Draw Transparently If Player Is Behind
-w3d_draw_cube_ext(global.texture_treetop1,global.texture_treebark1,x,y,0,(height*(resource_count/resource_max))+16,32,32);}}
+w3d_draw_cube_ext(global.texture_treetop1,global.texture_treebark1,x,y,0,(height1*(resource_count/resource_max))+16,32,32);}}
 with(obj_world_tree_1){
 if ( active == true ){
 if ( resource_count &gt;= resource_max ){
-w3d_draw_sprite_ext(spr_tree_top1,tree_top_sub,x,y,height,1,1,tree_top_rot,c_white,tree_top_alpha);}
+w3d_draw_sprite_ext(spr_tree_top1,tree_top_sub,x,y,height1,1,1,tree_top_rot,c_white,tree_top_alpha);}
 }}}
 
 // Birds

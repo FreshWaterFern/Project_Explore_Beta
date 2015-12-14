@@ -343,8 +343,8 @@
     <option_linux_steam_app_id>357650</option_linux_steam_app_id>
     <option_linux_sync>0</option_linux_sync>
     <option_linux_texture_page>4096</option_linux_texture_page>
-    <option_linux_version_build>1</option_linux_version_build>
-    <option_linux_version_major>1</option_linux_version_major>
+    <option_linux_version_build>4</option_linux_version_build>
+    <option_linux_version_major>3</option_linux_version_major>
     <option_linux_version_minor>0</option_linux_version_minor>
     <option_loadalpha>255</option_loadalpha>
     <option_loadimage>nil</option_loadimage>
@@ -506,7 +506,7 @@
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>3.0.0.2</option_version>
-    <option_version_build>5</option_version_build>
+    <option_version_build>4</option_version_build>
     <option_version_company>Seabass And Gazelle Studios</option_version_company>
     <option_version_copyright></option_version_copyright>
     <option_version_description>Project Explore is a survival game. It's a game about learning the environment, discovering hundreds of items, and your ability to adapt to any situation. Not just build a house and bunker down. A house provides you with shelter but you'll need to eat and maintain your sanity as well.</option_version_description>
@@ -605,7 +605,7 @@
     <option_windows_texture_page>4096</option_windows_texture_page>
     <option_windows_use_splash>0</option_windows_use_splash>
     <option_windows_vertex_buffer_method>0</option_windows_vertex_buffer_method>
-    <option_windows_vertex_buffer_method2>0</option_windows_vertex_buffer_method2>
+    <option_windows_vertex_buffer_method2>2</option_windows_vertex_buffer_method2>
     <option_winphone_480_splash_image>Configs\Default\WinPhone\SplashScreenImage480.jpg</option_winphone_480_splash_image>
     <option_winphone_720_splash_image>Configs\Default\WinPhone\SplashScreenImage720.jpg</option_winphone_720_splash_image>
     <option_winphone_768_splash_image>Configs\Default\WinPhone\SplashScreenImage.jpg</option_winphone_768_splash_image>

@@ -4378,6 +4378,7 @@
   </fonts>
   <objects name="objects">
     <objects name="rendering">
+      <object>objects\obj_camera</object>
       <object>objects\obj_game_weather</object>
       <object>objects\obj_game_render</object>
       <objects name="weather effects">
@@ -4407,7 +4408,6 @@
     </objects>
     <objects name="entity">
       <object>objects\obj_player</object>
-      <object>objects\obj_camera</object>
       <objects name="interactable">
         <object>objects\obj_dead_skeleton1</object>
         <object>objects\obj_item_dropped</object>

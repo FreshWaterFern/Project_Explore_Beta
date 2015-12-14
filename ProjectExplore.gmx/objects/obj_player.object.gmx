@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-999</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -4912,6 +4912,7 @@ if ( x != xprevious &amp;&amp; y != yprevious )
           <argument>
             <kind>1</kind>
             <string>/// Draw Mouse Prompt
+/*
 var sprite_set = spr_mouse_image;
 if ( pl_refill_display == true )
     {
@@ -4950,6 +4951,7 @@ if ( global.fishing_water_id != noone &amp;&amp; global.tablet_mode == 0 )
           <argument>
             <kind>1</kind>
             <string>/// Object Placement
+/*
 if ( v_item_equipped &gt; 0 ){
 if ( global.item_data[#v_item_equipped,4] == 2 ){ // Is it a world placement item?
 var obj_id = db_object_get_name(global.item_data[#v_item_equipped,0]);
@@ -5092,6 +5094,7 @@ draw_primitive_end();
           <argument>
             <kind>1</kind>
             <string>/// Render Player
+/*
 if ( global.render_characters == true )
 {
 var v_color = c_white;
