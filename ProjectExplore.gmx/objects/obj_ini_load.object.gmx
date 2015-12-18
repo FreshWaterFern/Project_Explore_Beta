@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize
-sprite_external_init();
+image_system_init();
 randomize();
 start_time = current_time;
 background = background_add("bg_screen1.png",false,false);
@@ -356,11 +356,12 @@ if ( ds_grid_width(global.item_data) &gt; 1 &amp;&amp; file_count == ds_grid_wid
 {
 
 var i = 0;var r = 0;var cache = 0;var list = 0;var list_size = 0;var width = ds_grid_width(global.item_data);
-sprite_load_begin(4096,4096,1);
+image_group_create("Items");
+image_load_start("Items",4096,4096,1);
 for(i=1;i&lt;width;i++){
 
     if ( global.item_data[#i,4] != 4 ){
-    sprite_load_add(string(db_item_get_name(global.item_data[#i,0])),global.item_data[#i,2],1,0,0);
+    image_load_add(string(db_item_get_name(global.item_data[#i,0])),global.item_data[#i,2],1,0,0);
 
 }else{
 
@@ -368,34 +369,34 @@ for(i=1;i&lt;width;i++){
     global.item_data[#i,2] = string_replace(global.item_data[#i,2],WD,"");
     list = convert_string_to_list(global.item_data[#i,2],",");list_size = ds_list_size(list);
     for(r=0;r&lt;list_size;r++){
-    sprite_load_add(string(db_item_get_name(global.item_data[#i,0]))+"_"+string(r),WD+list[|r],1,0,0);}ds_list_destroy(list);
+    image_load_add(string(db_item_get_name(global.item_data[#i,0]))+"_"+string(r),WD+list[|r],1,0,0);}ds_list_destroy(list);
     global.item_data[#i,2] = ds_list_create(); /*create a list for sprite indexs*/
     for(r=0;r&lt;list_size;r++){ds_list_add(global.item_data[#i,2],string(db_item_get_name(global.item_data[#i,0]))+"_"+string(r));}}
 
 if ( global.item_data[#i,4] == 3 ){
-sprite_load_add(string(global.item_data[#i,5]),WD+global.item_data[#i,5],1,0,0);}}
+image_load_add(string(global.item_data[#i,5]),WD+global.item_data[#i,5],1,0,0);}}
 
-global.texture_page_list = sprite_load_end_dynamic();
+global.texture_page_list = image_load_finish();
 
 for(i=1;i&lt;width;i++){
 
 if ( global.item_data[#i,4] != 4 ){
 
-    global.item_data[#i,2] = sprite_load_get(string(db_item_get_name(global.item_data[#i,0])));
-    sprite_external_set_offset(global.item_data[#i,2],sprite_external_get_width(global.item_data[#i,2])/2,sprite_external_get_height(global.item_data[#i,2])/2);
+    global.item_data[#i,2] = image_load_get(string(db_item_get_name(global.item_data[#i,0])));
+    image_set_offset(global.item_data[#i,2],image_get_width(global.item_data[#i,2])/2,image_get_height(global.item_data[#i,2])/2);
     
 }else{
 
     // Handle differently if it is a plant type
     list_size = ds_list_size(global.item_data[#i,2]);list = global.item_data[#i,2];
     for(r=0;r&lt;list_size;r++){;
-    list[|r] = sprite_load_get(list[|r]);
-    sprite_external_set_offset(list[|r],sprite_external_get_width(list[|r])/2,sprite_external_get_height(list[|r])/2);}
+    list[|r] = image_load_get(list[|r]);
+    image_set_offset(list[|r],image_get_width(list[|r])/2,image_get_height(list[|r])/2);}
 }
 
 if ( global.item_data[#i,4] == 3 ){
-global.item_data[#i,5] = sprite_load_get(string(global.item_data[#i,5]));
-sprite_external_set_offset(global.item_data[#i,5],sprite_external_get_width(global.item_data[#i,5])/2,sprite_external_get_height(global.item_data[#i,5])/2);}}
+global.item_data[#i,5] = image_load_get(string(global.item_data[#i,5]));
+image_set_offset(global.item_data[#i,5],image_get_width(global.item_data[#i,5])/2,image_get_height(global.item_data[#i,5])/2);}}
 
 texture_compile = 2;
 }

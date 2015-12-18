@@ -4233,8 +4233,8 @@
       <scripts name="w3D sprites">
         <script>scripts\w3d_draw_sprite.gml</script>
         <script>scripts\w3d_draw_sprite_ext.gml</script>
-        <script>scripts\w3d_draw_external_sprite.gml</script>
-        <script>scripts\w3d_draw_external_sprite_ext.gml</script>
+        <script>scripts\w3d_draw_image.gml</script>
+        <script>scripts\w3d_draw_image_ext.gml</script>
       </scripts>
       <scripts name="w3D system">
         <script>scripts\w3d_depth.gml</script>
@@ -4311,7 +4311,7 @@
         <script>scripts\mod_object_ini.gml</script>
       </scripts>
       <scripts name="external">
-        <script>scripts\draw_external_sprite.gml</script>
+        <script>scripts\image_system_init.gml</script>
       </scripts>
     </scripts>
     <scripts name="logging">

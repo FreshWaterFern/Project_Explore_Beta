@@ -227,9 +227,9 @@ draw_sprite_ext(spr_item_view_arrow,0,view_wview[0]-256,32,-1,1,0,c_white,1);
 draw_sprite_ext(spr_item_view_arrow,0,view_wview[0]-220,32,1,1,0,c_white,1)
 draw_sprite_ext(spr_inventory_slot,0,640,300,4,4,0,c_white,1);
 if ( global.item_data[#item_index,4] != 4 ){
-draw_external_sprite_ext(item_sprite,0,640,300,4,4,0,c_white,1);}
+draw_image_ext(item_sprite,0,640,300,4,4,0,c_white,1);}
 else{
-draw_external_sprite_ext(ds_list_find_value(global.item_data[#item_index,2],0),0,640,300,4,4,0,c_white,1);}
+draw_image_ext(ds_list_find_value(global.item_data[#item_index,2],0),0,640,300,4,4,0,c_white,1);}
 draw_set_halign(fa_center);
 draw_text(640,640,string(item_desc));
 draw_text(640,428,string(item_name));

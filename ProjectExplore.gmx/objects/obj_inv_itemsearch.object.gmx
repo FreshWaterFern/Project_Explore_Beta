@@ -316,7 +316,7 @@ with(obj_inv_slot){draw_set_color(c_white);draw_set_halign(fa_left);draw_set_val
 draw_sprite(sprite_index,image_index,x,y);}
 with(obj_inv_slot){
 if ( item_sprite != 0 &amp;&amp; item_id &gt; 0 )
-{draw_external_sprite(item_sprite,0,x,y);}}
+{draw_image(item_sprite,0,x,y);}}
 with(obj_inv_slot){
 if ( item_stack &gt; 1 )
 {draw_text_outline(string(item_stack),x-15,y-13,c_white,c_black);}}
@@ -369,7 +369,7 @@ if ( instance_exists(obj_inv_craftlist) ){
 if ( global.render_gui_page == "inventory" ){
 draw_set_font(font_gulim_12);draw_set_halign(fa_left);draw_set_valign(fa_middle);draw_set_alpha(1);draw_set_color(c_white);
 with(obj_inv_craftlist){draw_sprite(sprite_index,image_index,x,y);}
-with(obj_inv_craftlist){draw_external_sprite(item_sprite,0,x,y);}
+with(obj_inv_craftlist){draw_image(item_sprite,0,x,y);}
 draw_set_halign(fa_center);
 with(obj_inv_craftlist){
 var grid_width = ds_grid_width(req_grid);img_ind1 = 0;img_ind2 = 0;img_ind3 = 0;img_ind4 = 0;var x_off = 0;
@@ -386,13 +386,13 @@ if ( mouse_check_area(x+192-20,y-20,x+192+20,y+20) ){img_ind4=1;} // Mouse check
 draw_sprite(spr_crafting_req,img_ind4,x+192,y);}}}}
 
 with(obj_inv_craftlist){var grid_width = ds_grid_width(req_grid);
-draw_external_sprite(sprite_cache[|0],0,x+48,y);
+draw_image(sprite_cache[|0],0,x+48,y);
 if ( grid_width &gt; 1 ){
-draw_external_sprite(sprite_cache[|1],0,x+96,y);
+draw_image(sprite_cache[|1],0,x+96,y);
 if ( grid_width &gt; 2 ){
-draw_external_sprite(sprite_cache[|2],0,x+144,y);
+draw_image(sprite_cache[|2],0,x+144,y);
 if ( grid_width &gt; 3 ){
-draw_external_sprite(sprite_cache[|3],0,x+192,y);}}}}
+draw_image(sprite_cache[|3],0,x+192,y);}}}}
 
 with(obj_inv_craftlist){var grid_width = ds_grid_width(req_grid);
 draw_text_outline(req_grid[#0,1],x+48-16,y-16,c_white,c_black);
@@ -463,7 +463,7 @@ if ( global.item_data[#global.v_slot_inst.item_id,4] != 4 ){
 var i_sprite = global.item_data[#global.v_slot_inst.item_id,2];}
 else{
 var i_sprite = ds_list_find_value(global.item_data[#global.v_slot_inst.item_id,2],0);}
-draw_external_sprite_ext(i_sprite,0,m_x,m_y,1+global.tablet_scaling,1+global.tablet_scaling,0,c_white,0.5);}}
+draw_image_ext(i_sprite,0,m_x,m_y,1+global.tablet_scaling,1+global.tablet_scaling,0,c_white,0.5);}}
 surface_reset_target();}
 </string>
           </argument>

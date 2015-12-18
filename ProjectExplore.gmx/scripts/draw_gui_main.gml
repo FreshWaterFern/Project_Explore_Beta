@@ -67,13 +67,13 @@ var temperature = obj_game.c_temperature;if ( global.render_temp == 1 ){temperat
 
 // Draw external sprites all at once
 if(item_slot_1>0){if ( global.item_data[#item_slot_1,4] != 4 ){spr = global.item_data[#item_slot_1,2];}else{spr = ds_list_find_value(global.item_data[#item_slot_1,2],0);}
-draw_external_sprite_ext(spr,0,view_xcenter-72-(offset_x*3),view_ybottom-25-offset_y,1+global.tablet_scaling,1+global.tablet_scaling,0,c_white,obj_game.hotbar_alpha);}
+draw_image_ext(spr,0,view_xcenter-72-(offset_x*3),view_ybottom-25-offset_y,1+global.tablet_scaling,1+global.tablet_scaling,0,c_white,obj_game.hotbar_alpha);}
 if(item_slot_2>0){if ( global.item_data[#item_slot_2,4] != 4 ){spr = global.item_data[#item_slot_2,2];}else{spr = ds_list_find_value(global.item_data[#item_slot_2,2],0);}
-draw_external_sprite_ext(spr,0,view_xcenter-24-offset_x,view_ybottom-25-offset_y,1+global.tablet_scaling,1+global.tablet_scaling,0,c_white,obj_game.hotbar_alpha);}
+draw_image_ext(spr,0,view_xcenter-24-offset_x,view_ybottom-25-offset_y,1+global.tablet_scaling,1+global.tablet_scaling,0,c_white,obj_game.hotbar_alpha);}
 if(item_slot_3>0){if ( global.item_data[#item_slot_3,4] != 4 ){spr = global.item_data[#item_slot_3,2];}else{spr = ds_list_find_value(global.item_data[#item_slot_3,2],0);}
-draw_external_sprite_ext(spr,0,view_xcenter+24+offset_x,view_ybottom-25-offset_y,1+global.tablet_scaling,1+global.tablet_scaling,0,c_white,obj_game.hotbar_alpha);}
+draw_image_ext(spr,0,view_xcenter+24+offset_x,view_ybottom-25-offset_y,1+global.tablet_scaling,1+global.tablet_scaling,0,c_white,obj_game.hotbar_alpha);}
 if(item_slot_4>0){if ( global.item_data[#item_slot_4,4] != 4 ){spr = global.item_data[#item_slot_4,2];}else{spr = ds_list_find_value(global.item_data[#item_slot_4,2],0);}
-draw_external_sprite_ext(spr,0,view_xcenter+72+(offset_x*3),view_ybottom-25-offset_y,1+global.tablet_scaling,1+global.tablet_scaling,0,c_white,obj_game.hotbar_alpha);}
+draw_image_ext(spr,0,view_xcenter+72+(offset_x*3),view_ybottom-25-offset_y,1+global.tablet_scaling,1+global.tablet_scaling,0,c_white,obj_game.hotbar_alpha);}
 
 if ( clock_alpha == 0 )
 {draw_text_outline(string(round(temperature)),ui_width-40,16,c_white,c_black);draw_sprite(spr_degree_sign,global.render_temp,ui_width-40+string_width(string(round(temperature))),16);}

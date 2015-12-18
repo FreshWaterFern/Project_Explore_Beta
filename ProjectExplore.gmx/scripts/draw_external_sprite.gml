@@ -1,5 +1,5 @@
-#define draw_external_sprite
-///draw_external_sprite(sprite,subimg,x,y)
+#define draw_image
+///draw_image(sprite,subimg,x,y)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 var _subimg = l_external_sprite[@ argument0 ];
@@ -15,8 +15,8 @@ draw_background_part(
 );
 
 
-#define draw_external_sprite_ext
-///draw_external_sprite_ext(sprite,subimg,x,y,xscale,yscale,rot,colour,alpha)
+#define draw_image_ext
+///draw_image_ext(sprite,subimg,x,y,xscale,yscale,rot,colour,alpha)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 var _subimg = l_external_sprite[@ argument0 ];
@@ -40,8 +40,8 @@ draw_background_general(
 );
 
 
-#define draw_external_sprite_general
-///draw_external_sprite_general(sprite,subimg,left,top,width,height,x,y,xscale,yscale,rot,c1,c2,c3,c4,alpha)
+#define draw_image_general
+///draw_image_general(sprite,subimg,left,top,width,height,x,y,xscale,yscale,rot,c1,c2,c3,c4,alpha)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 var _subimg = l_external_sprite[@ argument0 ];
@@ -65,8 +65,8 @@ draw_background_general(
 );
 
 
-#define draw_external_sprite_part
-///draw_external_sprite_part(sprite,subimg,left,top,width,height,x,y)
+#define draw_image_part
+///draw_image_part(sprite,subimg,left,top,width,height,x,y)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 var _subimg = l_external_sprite[@ argument0 ];
@@ -82,8 +82,8 @@ draw_background_part(
 );
 
 
-#define draw_external_sprite_part_ext
-///draw_external_sprite_part_ext(sprite,subimg,left,top,width,height,x,y,xscale,yscale,colour,alpha)
+#define draw_image_part_ext
+///draw_image_part_ext(sprite,subimg,left,top,width,height,x,y,xscale,yscale,colour,alpha)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 var _subimg = l_external_sprite[@ argument0 ];
@@ -103,8 +103,8 @@ draw_background_part_ext(
 );
 
 
-#define draw_external_sprite_pos
-///draw_external_sprite_pos(sprite,subimg,x1,y1,x2,y2,x3,y3,x4,y4,alpha)
+#define draw_image_pos
+///draw_image_pos(sprite,subimg,x1,y1,x2,y2,x3,y3,x4,y4,alpha)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 var _subimg = l_external_sprite[@ argument0 ];
@@ -129,8 +129,8 @@ draw_primitive_begin_texture( pr_trianglelist , background_get_texture( _bck ) )
 draw_primitive_end();
 
 
-#define draw_external_sprite_stretched
-///draw_external_sprite_stretched(sprite,subimg,x,y,w,h)
+#define draw_image_stretched
+///draw_image_stretched(sprite,subimg,x,y,w,h)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 var _subimg = l_external_sprite[@ argument0 ];
@@ -150,8 +150,8 @@ draw_background_part_ext(
 );
 
 
-#define draw_external_sprite_stretched_ext
-///draw_external_sprite_stretched_ext(sprite,subimg,x,y,w,h,colour,alpha)
+#define draw_image_stretched_ext
+///draw_image_stretched_ext(sprite,subimg,x,y,w,h,colour,alpha)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 var _subimg = l_external_sprite[@ argument0 ];
@@ -171,8 +171,8 @@ draw_background_part_ext(
 );
 
 
-#define draw_external_sprite_tiled
-///draw_external_sprite_tiled(sprite,subimg,x,y)
+#define draw_image_tiled
+///draw_image_tiled(sprite,subimg,x,y)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 var _subimg = l_external_sprite[@ argument0 ];
@@ -201,8 +201,8 @@ for( var _x = -_w; _x <= view_wview[ view_current ]; _x += _w ){
 }
 
 
-#define draw_external_sprite_tiled_ext
-///draw_external_sprite_tiled_ext(sprite,subimg,x,y,xscale,yscale,colour,alpha)
+#define draw_image_tiled_ext
+///draw_image_tiled_ext(sprite,subimg,x,y,xscale,yscale,colour,alpha)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 var _subimg = l_external_sprite[@ argument0 ];
@@ -592,43 +592,43 @@ if( ds_map_size( temp_sprite_get ) == 0 ){
 return( _val );
 
 
-#define sprite_external_get_number
-///sprite_external_get_number(ind)
+#define image_get_number
+///image_get_number(ind)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 return( l_external_sprite[@ argument0 ] );
 
 
-#define sprite_external_get_width
-///sprite_external_get_width(ind)
+#define image_get_width
+///image_get_width(ind)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 return( l_external_sprite[@ argument0 + 1 ] );
 
 
-#define sprite_external_get_height
-///sprite_external_get_height(ind)
+#define image_get_height
+///image_get_height(ind)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 return( l_external_sprite[@ argument0 + 2 ] );
 
 
-#define sprite_external_get_xoffset
-///sprite_external_get_xoffset(ind)
+#define image_get_xoffset
+///image_get_xoffset(ind)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 return( l_external_sprite[@ argument0 + 3 ] );
 
 
-#define sprite_external_get_yoffset
-///sprite_external_get_yoffset(ind)
+#define image_get_yoffset
+///image_get_yoffset(ind)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 return( l_external_sprite[@ argument0 + 4 ] );
 
 
-#define sprite_external_get_uvs
-///sprite_external_get_uvs(spr,subimg)
+#define image_get_uvs
+///image_get_uvs(spr,subimg)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 var _subimg = l_external_sprite[@ argument0 ];
@@ -644,23 +644,23 @@ _ar[ 3 ] = (l_external_sprite[@ argument0 + 7 + _c_subimg ]+l_external_sprite[@ 
 return( _ar );
 
 
-#define sprite_external_exists
-///sprite_external_exists(spr)
+#define image_exists
+///image_exists(spr)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 return( l_external_sprite[@ argument0 ] > 0 );
 
 
-#define sprite_external_set_offset
-///sprite_external_set_offset(ind,xoff,yoff)
+#define image_set_offset
+///image_set_offset(ind,xoff,yoff)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 l_external_sprite[@ argument0 + 3 ] = argument1;
 l_external_sprite[@ argument0 + 4 ] = argument2;
 
 
-#define sprite_external_get_texturepage
-///sprite_external_get_texturepage(sprite,subimg)
+#define image_get_texturepage
+///image_get_texturepage(sprite,subimg)
 gml_pragma("forceinline"); // in YYC, proccessing boost but it inflates the final exe size
 
 var _subimg = l_external_sprite[@ argument0 ];
@@ -669,8 +669,8 @@ var _c_subimg = ( argument1 mod _subimg ) * 3;
 return( l_external_sprite[@ argument0 + 5 + _c_subimg ] );
 
 
-#define sprite_external_save
-///sprite_external_save(ind,subimg,fname)
+#define image_save
+///image_save(ind,subimg,fname)
 var _subimg = l_external_sprite[@ argument0 ];
 var _c_subimg = ( argument1 mod _subimg ) * 3;
 
@@ -692,8 +692,8 @@ surface_save( _surf , argument2 );
 surface_free( _surf );
 
 
-#define sprite_external_save_strip
-///sprite_external_save_strip(ind,fname)
+#define image_save_strip
+///image_save_strip(ind,fname)
 var _subimg_count = l_external_sprite[@ argument0 ];
 
 var _surf = surface_create( l_external_sprite[@ argument0 + 1 ] * _subimg_count , l_external_sprite[@ argument0 + 2 ] );
@@ -716,7 +716,7 @@ surface_save( _surf , argument1 );
 surface_free( _surf );
 
 
-#define sprite_external_init
-///sprite_external_init()
+#define image_init
+///image_init()
 globalvar l_external_sprite;
 l_external_sprite[ 0 ] = 0;// = ds_list_create();

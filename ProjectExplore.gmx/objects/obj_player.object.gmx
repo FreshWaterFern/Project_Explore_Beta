@@ -5082,8 +5082,8 @@ inventory_get_item(v_item_equipped,1,1);// Clear it from inventory
 
 // Draw hitbox
 if ( !v_con_col ){var col = c_green;}else{var col = c_red;}
-var spr_height = sprite_external_get_height(ds_list_find_value(global.item_data[#_id,2],1));
-draw_external_sprite_ext(place_sprite,0,v_con_x,v_con_y+(spr_height/2)-4,1,1,0,col,0.75);
+var spr_height = image_get_height(ds_list_find_value(global.item_data[#_id,2],1));
+draw_image_ext(place_sprite,0,v_con_x,v_con_y+(spr_height/2)-4,1,1,0,col,0.75);
 draw_set_color(c_white);draw_set_alpha(1);
 }}
 </string>
@@ -5166,15 +5166,15 @@ if ( item_type == 1 or item_type == 6 ){ // If the item is the correct type to b
 var list = convert_string_to_list(global.item_data[#v_item_equipped,5],",");
 var spr_item = global.item_data[#v_item_equipped,2];
 if ( real(list[|4]) != 0 &amp;&amp; real(list[|5]) != 0 ){
-sprite_external_set_offset(spr_item,real(list[|4]),real(list[|5]));}
-//draw_external_sprite(spr_item,0,x,y);
+image_set_offset(spr_item,real(list[|4]),real(list[|5]));}
+//draw_image(spr_item,0,x,y);
 var y_math = y+lengthdir_y(real(list[|1]),direction+real(list[|3]));
 var x_math = x+lengthdir_x(real(list[|0]),direction+real(list[|2]));
-draw_external_sprite_ext(spr_item,1,x_math,y_math,0.8,0.8,image_angle,c_white,1);
+draw_image_ext(spr_item,1,x_math,y_math,0.8,0.8,image_angle,c_white,1);
 spr = global.ds_char_skin_item[| global.char_skin];
 draw_sprite_ext(spr,image_index,x,y,1,1,image_angle,c_white,1);
 ds_list_destroy(list);
-sprite_external_set_offset(spr_item,sprite_external_get_width(spr_item)/2,sprite_external_get_height(spr_item)/2);
+image_set_offset(spr_item,image_get_width(spr_item)/2,image_get_height(spr_item)/2);
 }}
 
 var spr = global.ds_char_legs[| global.char_legs];
@@ -5192,13 +5192,13 @@ draw_sprite_ext(spr,image_index,x,y,1,1,image_angle,c_white,1);
 // Body Clothing
 if ( global.clothing_body != "" )
 {spr = global.item_data[#global.equip_list[|1],5];
-draw_external_sprite_ext(spr,0,x,y,1,1,image_angle,c_white,1);
+draw_image_ext(spr,0,x,y,1,1,image_angle,c_white,1);
 }
 
 // Head Clothing
 if ( global.clothing_head != "" )
 {spr = global.item_data[#global.equip_list[|0],5];
-draw_external_sprite_ext(spr,0,x,y,1,1,image_angle,c_white,1);
+draw_image_ext(spr,0,x,y,1,1,image_angle,c_white,1);
 }
 else
 {

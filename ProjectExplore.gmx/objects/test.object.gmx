@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for(i=1;i&lt;ds_grid_width(global.item_data)-1;i++){draw_external_sprite(global.item_data[#i,2],0,x,y);}
+            <string>for(i=1;i&lt;ds_grid_width(global.item_data)-1;i++){draw_image(global.item_data[#i,2],0,x,y);}
 </string>
           </argument>
         </arguments>
