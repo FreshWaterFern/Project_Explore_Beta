@@ -1,4 +1,4 @@
-/// world_generate_chunk(x,y)
+/// world_generate_chunk_stay(x,y)
 
 //objind(object_id) inst = instance_create(x,y,objind(object_id), verify correct id is returned
 
@@ -18,7 +18,6 @@ var temp_list = 0;
 var item_id = 0;
 var chance = 0;
 var inst_count = 0;
-var inst_list = ds_list_create();
 
 var biome_id = 0;var biome_set = -1;
 
@@ -53,7 +52,6 @@ for(i=0;i<total;i++){
 if ( irandom(99)+1 <= chance ){
 inst = instance_create(floor(random_range(pre_calc1,pre_calc3)),floor(random_range(pre_calc2,pre_calc4)),objind(obj_world_tree_1));
 world_obj_add(inst);
-ds_list_add(inst_list,inst);
 }}
 
 // Create a list of all fruit bushes that can be used
@@ -68,7 +66,6 @@ for(i=0;i<total;i++){
 if ( irandom(99)+1 <= chance ){
 inst = instance_create(floor(random_range(pre_calc1,pre_calc3)),floor(random_range(pre_calc2,pre_calc4)),objind(object_list[|irandom(size)]));
 world_obj_add(inst);
-ds_list_add(inst_list,inst);
 }}
 
 ds_list_clear(object_list);
@@ -87,7 +84,6 @@ for(i=0;i<total;i++){
 if ( irandom(99)+1 <= chance ){
 inst = instance_create(floor(random_range(pre_calc1,pre_calc3)),floor(random_range(pre_calc2,pre_calc4)),objind(object_list[|irandom(size)]));
 world_obj_add(inst);
-ds_list_add(inst_list,inst);
 }}
 
 // Place Wolves
@@ -97,7 +93,6 @@ for(i=0;i<total;i++){
 if ( irandom(99)+1 <= chance ){
 inst = instance_create(floor(random_range(pre_calc1,pre_calc3)),floor(random_range(pre_calc2,pre_calc4)),objind(obj_npc_wolf));
 world_obj_add(inst);
-ds_list_add(inst_list,inst);
 }}
 
 // Place Bears
@@ -107,7 +102,6 @@ for(i=0;i<total;i++){
 if ( irandom(99)+1 <= chance ){
 inst = instance_create(floor(random_range(pre_calc1,pre_calc3)),floor(random_range(pre_calc2,pre_calc4)),objind(obj_npc_bear));
 world_obj_add(inst);
-ds_list_add(inst_list,inst);
 }}
 
 // Place Deers
@@ -117,7 +111,7 @@ for(i=0;i<total;i++){
 if ( irandom(99)+1 <= chance ){
 inst = instance_create(floor(random_range(pre_calc1,pre_calc3)),floor(random_range(pre_calc2,pre_calc4)),objind(obj_npc_buck));
 world_obj_add(inst);
-ds_list_add(inst_list,inst);
+
 }}
 
 // Place custom objects
@@ -136,7 +130,6 @@ switch(real(temp_list[|1])){
 
 case 4:{
 inst = object_create_plant(pre_calc1+640+floor(random_range(real(temp_list[|2])-640,real(temp_list[|4])-640)),pre_calc2+640+floor(random_range(real(temp_list[|3])-640,real(temp_list[|5])-640)),item_id);
-ds_list_add(inst_list,inst);
 break;}
 
 }}}
@@ -160,7 +153,6 @@ switch(tile_id){
 case 100:{
 global.world_tiles[#r2,r1]=17;
 inst = instance_create((r2*128)+128,(r1*128)+128,obj_world_water2);world_obj_add(inst);
-ds_list_add(inst_list,inst);
 break;}
 
 default:{
@@ -178,8 +170,3 @@ s2++;
 }
 
 ds_list_destroy(object_list);
-
-t = ds_list_size(inst_list);
-for(i=0;i<t;i++){
-world_obj_delete(inst_list[|i]);
-with(inst_list[|i]){instance_destroy();}}

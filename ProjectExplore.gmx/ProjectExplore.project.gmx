@@ -3954,6 +3954,7 @@
       </sprites>
       <sprite>sprites\spr_mouse_image</sprite>
       <sprite>sprites\spr_map_tile</sprite>
+      <sprite>sprites\spr_outoffuel</sprite>
     </sprites>
     <sprites name="menu">
       <sprites name="main">
@@ -4265,11 +4266,20 @@
       <scripts name="generate">
         <scripts name="base">
           <script>scripts\world_generate_chunk.gml</script>
+          <script>scripts\world_generate_chunk_stay.gml</script>
           <script>scripts\world_generate_all.gml</script>
         </scripts>
         <scripts name="object">
           <script>scripts\object_create_plant.gml</script>
         </scripts>
+        <scripts name="file">
+          <script>scripts\world_generate_from_file.gml</script>
+          <script>scripts\mod_biome_list.gml</script>
+          <script>scripts\mod_biome_clear.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="useful">
+        <script>scripts\world_get_chunk.gml</script>
       </scripts>
     </scripts>
     <scripts name="attack scripts">
@@ -4346,6 +4356,7 @@
       <script>scripts\ini_read_real_check.gml</script>
       <script>scripts\ini_read_string_check.gml</script>
       <script>scripts\shader_ini.gml</script>
+      <script>scripts\world_set_size.gml</script>
     </scripts>
     <scripts name="file">
       <script>scripts\Graphics_File_Update.gml</script>
@@ -4353,6 +4364,11 @@
     <scripts name="Better Scaling">
       <script>scripts\better_scaling_draw_sprite.gml</script>
       <script>scripts\better_scaling_draw_surface.gml</script>
+    </scripts>
+    <scripts name="Object Scripts">
+      <scripts name="cooking">
+        <script>scripts\scr_cooking_OutOfFuel.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -4430,6 +4446,7 @@
         <object>objects\obj_rockhit_effect1</object>
         <object>objects\obj_blood_hit1</object>
         <object>objects\obj_muzzleflash_1</object>
+        <object>objects\obj_effect_parent</object>
       </objects>
       <objects name="collision">
         <objects name="hitbox">
@@ -4456,6 +4473,9 @@
         </objects>
         <objects name="resource gain">
           <object>objects\obj_popup_resourcegain</object>
+        </objects>
+        <objects name="special">
+          <object>objects\obj_popup_OutOfFuel</object>
         </objects>
       </objects>
     </objects>

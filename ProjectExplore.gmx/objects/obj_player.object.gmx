@@ -45,7 +45,7 @@ pl_knockback_cd = 0;
 pl_knockback_time = 0;
 pl_knockback_speed = 0;
 pl_knockback_dir = 0;
-pl_movespeed = 4;
+pl_movespeed = 4*4;
 pl_surface_type = 0;
 pl_fs_dist = 0;
 pl_fs_dist_max = 64;
@@ -58,8 +58,8 @@ pl_water_refill = 0;
 pl_tree_chop = 0;
 screencount = 0;
 chunk_step = 0;
-chunk_step_x = 0;
-chunk_step_y = 0;
+chunk_step_x = floor(x/1280);
+chunk_step_y = floor(y/1280);
 
 // Special Items
 compass_equip = false;
@@ -4889,6 +4889,51 @@ if ( global.sa_babysteps == false )
 if ( x != xprevious &amp;&amp; y != yprevious )
 {steam_set_achievement("Baby Steps");}
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Generate World
+var i = 0;var r = 0;
+global.chunk_x = floor(x/1280);
+global.chunk_y = floor(y/1280);
+chunk_step_x = global.chunk_x;
+chunk_step_y = global.chunk_y;
+previous_chunk_x = global.chunk_x;
+previous_chunk_y = global.chunk_y;
+
+var prefix = "worlds\"+global.world_name+"\chunks\";
+var file_name = "";
+for(i=chunk_step_x-1;i&lt;=chunk_step_x+1;i++){
+for(r=chunk_step_y-1;r&lt;=chunk_step_y+1;r++){
+file_name = prefix+"chunk"+string(i)+"_"+string(r)+".txt";
+if ( global.world_chunks[#i,r] ){
+file = file_text_open_read(file_name);
+world_generate_from_file(file);}
+else{
+world_generate_chunk_stay(i,r);
+global.world_chunks[#i,r]=1;
+}
+
+}}
 </string>
           </argument>
         </arguments>

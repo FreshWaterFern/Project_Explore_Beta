@@ -1,8 +1,4 @@
-/// world_generate_all()
-
-// Generates the full world in a single script
-
-// objind(object_id) inst = instance_create(x,y,objind(object_id), verify correct id is returned
+/// mod_biome_list()
 
 gml_pragma("forceinline");
 
@@ -14,7 +10,6 @@ var size = 0;
 var time_track = 0;
 var i = 0;var r1 = 0;var r2 = 0;var file_step = 0;
 var str = "";
-
 var biome_data = ds_list_create();
 
 for(file_step=0;file_step<list_size;file_step++){
@@ -106,33 +101,4 @@ else{file_log_write("Missing biome file! Was located via 'mod_blacklist.txt'| Fi
 file_text_close(file);
 }
 
-time_track = get_timer();
-file_log_write("Beginning world generation, this might take a while...");
-
-// Generate the world with all the data we have parsed into the game
-var rm_width = floor(room_width/1280);var rm_height = floor(room_height/1280);
-for(r1=0;r1<rm_width;r1++){
-for(r2=0;r2<rm_height;r2++){
-world_generate_chunk(r1,r2);
-}}
-
-file_log_write("Finished generating world.| Time spent: "+string((get_timer()-time_track)/1000)+"ms");
-
-// Ensure that the ocean has sand in it
-ds_grid_set_region(global.world_tiles,0,0,4,(room_height/128)-1,15);
-ds_grid_set_region(global.world_tiles,(room_width/128)-5,0,(room_width/128)-1,(room_height/128)-1,15);
-ds_grid_set_region(global.world_tiles,0,0,(room_width/128)-1,4,15);
-ds_grid_set_region(global.world_tiles,0,(room_height/128)-5,room_width/128,(room_height/128)-1,15);
-
-// Clear temporarily used memory
-list_size = ds_list_size(biome_data);
-
-for(i=0;i<list_size;i++){
-ds_grid_destroy(ds_map_find_value(ds_list_find_value(biome_data,i),"Terrain_Grid"));
-}
-
-for(i=0;i<list_size;i++){
-ds_map_destroy(biome_data[|i]);
-}
-
-ds_list_destroy(biome_data);
+return biome_data

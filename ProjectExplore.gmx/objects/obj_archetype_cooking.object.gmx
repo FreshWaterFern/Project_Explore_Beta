@@ -327,7 +327,12 @@ if ( active == true )
             else
             {
             if ( global.weather_mode &lt;= 1 or global.weather_mode &gt;= 4 )
-            {is_enabled = true;}}}
+            {
+            if ( scr_cooking_OutOfFuel() == false ){
+            is_enabled = true;}else{
+            is_enabled = false;instance_create(x,y,obj_popup_OutOfFuel);}
+            }
+            }}
             if ( mouse_check_button_pressed(mb_right) ){
             var inst = instance_create(x,y,obj_item_dropped);
             inst.item_id = db_item_get_name(obj_name);

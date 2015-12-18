@@ -110,7 +110,11 @@ draw_set_color(c_green);draw_set_alpha(0.75);
 draw_text_transformed(640,math_y,file_name,scale1,scale1,0); // File name
 draw_set_color(make_color_rgb(200,200,200));draw_set_alpha(1);
 if ( mouse_check_button_pressed(mb_left) ){
-global.world_name = file_name;global.save_loading = true;io_clear();room_goto(room_world_editor);
+global.world_name = file_name;global.save_loading = true;io_clear();
+var file = file_text_open_read(file_name);file_text_readln(file);file_text_readln(file);
+room_set_width(room_world_editor,real(file_text_read_string(file)));file_text_readln(file);
+room_set_height(room_world_editor,real(file_text_read_string(file)));file_text_close(file);
+room_goto(room_world_editor);
 }
 if ( mouse_check_button_pressed(mb_right) ){
 other.file_cache = file_name;other.menu_state="Confirm DeleteGame";other.surface_update=true;other.button_slide=0;io_clear();with(obj_loadgame_button){instance_destroy();}

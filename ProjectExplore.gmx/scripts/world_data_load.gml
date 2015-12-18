@@ -205,9 +205,12 @@ for (i =0;i<width;i++) {
     }
 }
 ds_list_destroy(temp_list);end_read = 0;current_tiles = 0;
-file_text_readln(file); // -- Compression End -- //
+file_text_readln(file);
+// -- Compression End -- //
+
 // -- World Data [END] -- \\
 
+/*
 // -- Object Data [BEGIN] -- \\
 list_size = file_text_read_real(file);file_text_readln(file);
 for(i=0;i<list_size;i++){
@@ -364,7 +367,7 @@ ds_list_destroy(temp_list);
 }
 
 ds_list_destroy(temp_list);
-ds_list_destroy(list_copy);
+ds_list_destroy(list_copy);*/
 
 if ( file != -1 ){file_log_write("Game loaded successfully| file: "+string(argument0)+" |Time spent: "+string((get_timer()-time_track)/1000)+"ms");} // Log File Usage
 else{file_log_write("Game load failed| file: "+string(argument0)+" |Time spent: "+string((get_timer()-time_track)/1000)+"ms");} // Log File Usage

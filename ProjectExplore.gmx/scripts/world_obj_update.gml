@@ -9,3 +9,7 @@ var list = world_object_list_create(object_get_name(inst_id.object_index),inst_i
 ds_list_replace(global.world_obj_data,index,convert_list_to_string(list,","));
 ds_list_destroy(list);
 }
+else
+{
+world_obj_add(inst_id);
+}

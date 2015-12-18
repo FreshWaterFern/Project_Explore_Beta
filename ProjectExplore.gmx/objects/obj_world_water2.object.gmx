@@ -36,6 +36,8 @@ bobber_x = x;
 bobber_y = y;
 
 ai_grid_add_self(x,y,x+(sprite_width),y+(sprite_height));
+
+world_obj_add(id);
 </string>
           </argument>
         </arguments>

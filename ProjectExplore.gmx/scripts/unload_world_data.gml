@@ -11,6 +11,7 @@ ds_grid_destroy(global.world_tiles);
 ds_grid_destroy(global.c_inventory_pack);
 ds_grid_destroy(global.c_stack_pack);
 ds_grid_destroy(global.world_temperature);
+ds_grid_destroy(global.world_chunks);
 ds_grid_destroy(global.world_biomes);
 ds_grid_destroy(global.ambient_light);
 ds_list_destroy(global.ai_xdecal);
@@ -22,6 +23,9 @@ ds_list_destroy(global.waypoint_data_y);
 ds_list_destroy(global.waypoint_data_name);
 ds_list_destroy(global.roof_list);
 ds_list_destroy(global.status_list);
+ds_list_destroy(global.equip_list);
+ds_list_destroy(global.world_obj_data);
+ds_list_destroy(global.world_obj_ind);
 ds_map_destroy(global.status_map);
 
 // Free Surfaces From Memory, "GO, FLY MY BIRDIES"

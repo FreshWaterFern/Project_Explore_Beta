@@ -28,13 +28,15 @@
             <string>image_speed = 0.25;
 alarm[0]=1;
 destroy_obj = false;
-active = false;
+active = true;
 fishing = false;
 index = 0;
 alarm[1]=1;
 
 bobber_x = x;
 bobber_y = y;
+
+world_obj_add(id);
 </string>
           </argument>
         </arguments>

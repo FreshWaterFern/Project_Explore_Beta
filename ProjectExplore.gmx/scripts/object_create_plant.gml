@@ -26,3 +26,5 @@ sprite = ds_list_find_value(global.item_data[#plant_id,2],floor(plant_state));
 spr_height = sprite_external_get_height(ds_list_find_value(global.item_data[#index,2],1));
 world_obj_add(id);
 }
+
+return inst

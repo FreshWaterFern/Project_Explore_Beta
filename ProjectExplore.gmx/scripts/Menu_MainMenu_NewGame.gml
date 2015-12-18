@@ -87,13 +87,15 @@ case 2:{
 switch(global.world_size){
 case "Small":{global.world_size = "Medium";break;}
 case "Medium":{global.world_size = "Large";break;}
-case "Large":{global.world_size = "Extra Large";break;}
-case "Extra Large":{global.world_size = "Small";break;}}
+case "Large":{global.world_size = "Small";break;}}
+//case "Extra Large":{global.world_size = "Small";break;}}
 break;}
 case 3:{
 global.save_loading = false;
 global.world_name = inst_input[0].str;
 random_set_seed(convert_string_to_numbers(inst_input[1].str));
+world_set_size();
+global.new_game = true;
 room_goto(room_character_editor);break;}
 case 4:{menu_state="Main";surface_update=true;button_slide=0;break;}
 }button_select=-2;}}

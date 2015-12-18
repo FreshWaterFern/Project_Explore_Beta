@@ -19,6 +19,8 @@ ds_map_destroy(global.item_map);
 ds_map_destroy(global.crafting_map);
 ds_map_destroy(global.object_map);
 
+mod_biome_clear(obj_game.biome_data);
+
 background_delete(global.bg_menu);
 
 size = ds_list_size(global.texture_page_list);

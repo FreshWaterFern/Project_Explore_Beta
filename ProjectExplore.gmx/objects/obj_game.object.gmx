@@ -130,8 +130,9 @@ ds_list_add(music_list,audio_create_stream("music\06 Ostracization.oga"));
           <argument>
             <kind>1</kind>
             <string>/// Initialize
-//if ( instance_number(obj_game) &lt; 2 )
-{
+global.world_folder = string_replace(global.world_name,".sav","");
+globalvar biome_data;
+biome_data = mod_biome_list();
 
 // Load Audio Into Memory
 
@@ -198,7 +199,6 @@ slot_1_id = 0;slot_2_id = 0;slot_3_id = 0;slot_4_id = 0;
 
 // World Variables
 global.ai_check = 0;
-global.new_game = false;
 buffer_pos = 0;
 music_track = 0;
 
@@ -224,7 +224,6 @@ v_lightlevel = 1;
 hotbar_alpha = 5;
 
 temperature_grid_ini();
-}
 </string>
           </argument>
         </arguments>
@@ -1208,6 +1207,7 @@ instance_create(room_width-64,(i*128)-64,obj_world_water1);
 instance_create(room_width-192,(i*128)-64,obj_world_water1);
 instance_create(room_width-320,(i*128)-64,obj_world_water1);
 i++;}
+with(obj_world_water1){world_obj_delete(id);instance_destroy();}
 loading_step = 3;global.map_loaded = false;
 break;}
 
@@ -1219,23 +1219,19 @@ world_data_load(global.world_name);
 global.map_loaded = true;}
 global.world_name = string_replace(global.world_name,".sav","");
 global.world_name = string_replace(global.world_name,"_autosave","");
+global.world_folder = global.world_name;
 loading_step = 3;
 break;}
 
 case 3:{
 
-if ( !global.map_loaded ){
-world_generate_all();}
-
 loading_step = 4;
 global.world_loading = false;
 
-with(all){if ( object_index != obj_game_render &amp;&amp; object_index != obj_game_weather &amp;&amp; object_index != obj_game &amp;&amp; object_index != obj_volume &amp;&amp; object_index != obj_player &amp;&amp; object_index != obj_camera &amp;&amp; object_index != obj_main_logic )
-{instance_deactivate_object(id);}}
-instance_activate_region((global.chunk_x-1)*1280,(global.chunk_y-1)*1280,3840,3840,true);
-
 obj_player.previous_chunk_x = global.chunk_x;
 obj_player.previous_chunk_y = global.chunk_y;
+
+with(obj_player){event_user(0)}
 break;}
 
 case 4:{
@@ -1243,8 +1239,139 @@ var inst = instance_create(obj_player.x,obj_player.y,obj_popup_days_survived);
 inst.days = global.world_days;
 slot_1_id = ds_grid_get(global.c_inventory_pack,0,4);slot_2_id = ds_grid_get(global.c_inventory_pack,1,4);
 slot_3_id = ds_grid_get(global.c_inventory_pack,2,4);slot_4_id = ds_grid_get(global.c_inventory_pack,3,4);
-loading_step = 5;loading = false;
+loading = false;
+var prefix = "worlds\"+global.world_folder+"\chunks\";
+var chunk_get = world_get_chunk(obj_player.x,obj_player.y);
+var file = 0;
+
+if ( global.new_game == true ){loading_step = 7;}else{loading_step = 7;}
+/*
+// Row 1
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1]-1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1]-1)+".txt");
+world_generate_from_file(file);}else{
+world_generate_chunk(chunk_get[0]-1,chunk_get[1]-1);
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1]-1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1]-1)+".txt");
+world_generate_from_file(file);}}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1]-1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1]-1)+".txt");
+world_generate_from_file(file);}else{
+world_generate_chunk(chunk_get[0],chunk_get[1]-1);
+if ( file_exists(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1]-1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1]-1)+".txt");
+world_generate_from_file(file);}}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1]-1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1]-1)+".txt");
+world_generate_from_file(file);}else{
+world_generate_chunk(chunk_get[0]+1,chunk_get[1]-1);
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1]-1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1]-1)+".txt");
+world_generate_from_file(file);}}
+
+// Row 2
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1])+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1])+".txt");
+world_generate_from_file(file);}else{
+world_generate_chunk(chunk_get[0]-1,chunk_get[1]);
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1])+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1])+".txt");
+world_generate_from_file(file);}}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1])+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1])+".txt");
+world_generate_from_file(file);}else{
+world_generate_chunk(chunk_get[0],chunk_get[1]);
+if ( file_exists(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1])+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1])+".txt");
+world_generate_from_file(file);}}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1])+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1])+".txt");
+world_generate_from_file(file);}else{
+world_generate_chunk(chunk_get[0]+1,chunk_get[1]);
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1])+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1])+".txt");
+world_generate_from_file(file);}}
+
+// Row 3
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1]+1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1]+1)+".txt");
+world_generate_from_file(file);}else{
+world_generate_chunk(chunk_get[0]-1,chunk_get[1]+1);
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1]+1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1]+1)+".txt");
+world_generate_from_file(file);}}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1]+1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1]+1)+".txt");
+world_generate_from_file(file);}else{
+world_generate_chunk(chunk_get[0],chunk_get[1]+1);
+if ( file_exists(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1]+1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1]+1)+".txt");
+world_generate_from_file(file);}}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1]+1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1]+1)+".txt");
+world_generate_from_file(file);}else{
+world_generate_chunk(chunk_get[0]+1,chunk_get[1]+1);
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1]+1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1]+1)+".txt");
+world_generate_from_file(file);}}*/
 break;}
+
+case 5:{
+loading_step = 6;
+var i = 0;var list = ds_list_size(global.world_obj_ind);
+for(i=list-1;i&gt;-1;i--){
+with(global.world_obj_ind[|i]){instance_destroy();}
+ds_list_delete(global.world_obj_data,i);
+ds_list_delete(global.world_obj_ind,i);
+}
+var prefix = "worlds\"+global.world_folder+"\chunks\";
+var chunk_get = world_get_chunk(obj_player.x,obj_player.y);
+var file = 0;
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1]-1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1]-1)+".txt");
+world_generate_from_file(file);}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1])+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1])+".txt");
+world_generate_from_file(file);}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1]+1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]+1)+"_"+string(chunk_get[1]+1)+".txt");
+world_generate_from_file(file);}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1]-1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1]-1)+".txt");
+world_generate_from_file(file);}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1])+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1])+".txt");
+world_generate_from_file(file);}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1]+1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0])+"_"+string(chunk_get[1]+1)+".txt");
+world_generate_from_file(file);}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1]-1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1]-1)+".txt");
+world_generate_from_file(file);}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1])+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1])+".txt");
+world_generate_from_file(file);}
+
+if ( file_exists(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1]+1)+".txt") ){
+file = file_text_open_read(prefix+"chunk"+string(chunk_get[0]-1)+"_"+string(chunk_get[1]+1)+".txt");
+world_generate_from_file(file);}
+
+break;}
+
 }
 </string>
           </argument>

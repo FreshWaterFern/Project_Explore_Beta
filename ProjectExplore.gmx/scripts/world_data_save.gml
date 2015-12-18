@@ -178,6 +178,7 @@ file_text_write_string(file,"--Compression End--");file_text_writeln(file);
 // -- World Data [END] -- \\
 
 
+/*
 // -- Object Data [BEGIN] -- \\
 list_size = ds_list_size(global.world_obj_data);
 file_text_write_real(file,list_size);file_text_writeln(file); // How big is the object data list?
@@ -185,7 +186,7 @@ file_text_write_real(file,list_size);file_text_writeln(file); // How big is the 
 for(i=0;i<list_size;i++){
 file_text_write_string(file,global.world_obj_data[|i]);file_text_writeln(file);}
 // -- Object Data [END] -- \\
-
+*/
 
 
 file_text_close(file);

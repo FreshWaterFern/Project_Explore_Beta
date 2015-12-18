@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1410065407</depth>
+  <depth>-5000000</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_effect_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -83,14 +83,12 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>surface_set_target(application_surface);
-draw_set_alpha(alpha);
+            <string>draw_set_alpha(alpha);
 draw_set_color(v_color);
 
 draw_rectangle(0,0,view_wview[0],view_hview[0],false);
 
 draw_set_alpha(1);
-surface_reset_target();
 </string>
           </argument>
         </arguments>

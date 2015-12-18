@@ -89,6 +89,8 @@ gray = make_colour_rgb(130,130,130);
 button_select = -2;
 mouse_over = -1;
 
+global.new_game = false;
+
 gm_restart = 0;
 
 menu_state = "Main";
