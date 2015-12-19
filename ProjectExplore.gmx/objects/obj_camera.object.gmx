@@ -1013,10 +1013,6 @@ with(obj_bird1){
 direction = image_angle;
 image_index+=0.1;
 draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,c_white,0.85);
-//if ( obj_game.m_motionblur ){
-//draw_sprite_motionblur(point_distance(x,y,xprevious,yprevious),point_direction(x,y,xprevious,yprevious),x,y,0);}
-//else{
-//draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,c_white,0.1);}
 }}
 }
 </string>

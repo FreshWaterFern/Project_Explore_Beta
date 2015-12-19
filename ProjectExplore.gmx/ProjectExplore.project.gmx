@@ -4248,6 +4248,7 @@
     </scripts>
     <scripts name="world data">
       <script>scripts\world_obj_add.gml</script>
+      <script>scripts\world_obj_add_queue.gml</script>
       <script>scripts\world_data_save.gml</script>
       <script>scripts\world_data_load.gml</script>
       <script>scripts\world_obj_update.gml</script>
@@ -4280,6 +4281,8 @@
       </scripts>
       <scripts name="useful">
         <script>scripts\world_get_chunk.gml</script>
+        <script>scripts\chunk_queue_handle.gml</script>
+        <script>scripts\chunk_queue_handle_multi.gml</script>
       </scripts>
     </scripts>
     <scripts name="attack scripts">

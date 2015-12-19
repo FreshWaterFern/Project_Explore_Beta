@@ -39,8 +39,6 @@ direction = 0;
 
 alarm[0]=1;
 
-world_obj_add(id);
-
 active = false;
 </string>
           </argument>
@@ -91,25 +89,7 @@ ai_grid_remove_self(x-(sprite_width/2),y-(sprite_height/2),x+(sprite_width/2),y+
             <kind>1</kind>
             <string>/// Add To World Data &amp; AI Grid
 ai_grid_add_self(x-(sprite_width/2),y-(sprite_height/2),x+(sprite_width/2),y+(sprite_height/2));
-world_obj_update(id);
-
-if ( global.save_loading == false )
-{
-    var inst = instance_nearest(x,y,obj_world_tree_1)
-    if ( instance_exists(obj_world_tree_1) == true )
-    {
-    if ( point_distance(x,y,inst.x,inst.y) &lt; 80 )
-    {
-    instance_destroy();
-    }
-    else
-    {
-    // Fix Scale
-    image_xscale = scale_x;
-    image_yscale = scale_y;
-    }
-    }
-}
+world_obj_add_queue(id);
 </string>
           </argument>
         </arguments>

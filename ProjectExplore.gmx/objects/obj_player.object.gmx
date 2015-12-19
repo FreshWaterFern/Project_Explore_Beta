@@ -168,6 +168,35 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Queue Initialize
+globalvar queue_chunk_write;
+globalvar queue_chunk_write_step;
+globalvar file_list_queue;
+globalvar queue_file_list;
+queue_chunk_write = ds_queue_create();
+queue_chunk_write_step = ds_queue_create();
+queue_file_list = ds_queue_create();
+file_list_queue = ds_list_create();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// TEST
 /*
 global.contactX = 0;
@@ -3019,7 +3048,7 @@ global.chunk_y = floor(y/1280);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Check For World Loading
+            <string>/// Chunk Update And Queue
 
 if ( instance_exists(obj_game) ){
 if ( obj_game.loading_step &gt; 4 )
@@ -3034,6 +3063,7 @@ chunk_update(global.chunk_x,global.chunk_y);
 }
 }
 }
+chunk_queue_handle_multi();
 }
 }
 </string>

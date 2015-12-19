@@ -51,7 +51,7 @@ chance = ds_map_find_value(ds_list_find_value(biome_data,biome_set),"Tree_Chance
 for(i=0;i<total;i++){
 if ( irandom(99)+1 <= chance ){
 inst = instance_create(floor(random_range(pre_calc1,pre_calc3)),floor(random_range(pre_calc2,pre_calc4)),objind(obj_world_tree_1));
-world_obj_add(inst);
+world_obj_add_queue(inst);
 }}
 
 // Create a list of all fruit bushes that can be used
@@ -65,7 +65,7 @@ chance = ds_map_find_value(ds_list_find_value(biome_data,biome_set),"FruitBush_C
 for(i=0;i<total;i++){
 if ( irandom(99)+1 <= chance ){
 inst = instance_create(floor(random_range(pre_calc1,pre_calc3)),floor(random_range(pre_calc2,pre_calc4)),objind(object_list[|irandom(size)]));
-world_obj_add(inst);
+world_obj_add_queue(inst);
 }}
 
 ds_list_clear(object_list);
@@ -83,7 +83,7 @@ chance = ds_map_find_value(ds_list_find_value(biome_data,biome_set),"LeafBush_Ch
 for(i=0;i<total;i++){
 if ( irandom(99)+1 <= chance ){
 inst = instance_create(floor(random_range(pre_calc1,pre_calc3)),floor(random_range(pre_calc2,pre_calc4)),objind(object_list[|irandom(size)]));
-world_obj_add(inst);
+world_obj_add_queue(inst);
 }}
 
 // Place Wolves
@@ -92,7 +92,7 @@ chance = ds_map_find_value(ds_list_find_value(biome_data,biome_set),"Wolf_Chance
 for(i=0;i<total;i++){
 if ( irandom(99)+1 <= chance ){
 inst = instance_create(floor(random_range(pre_calc1,pre_calc3)),floor(random_range(pre_calc2,pre_calc4)),objind(obj_npc_wolf));
-world_obj_add(inst);
+world_obj_add_queue(inst);
 }}
 
 // Place Bears
@@ -101,7 +101,7 @@ chance = ds_map_find_value(ds_list_find_value(biome_data,biome_set),"Bear_Chance
 for(i=0;i<total;i++){
 if ( irandom(99)+1 <= chance ){
 inst = instance_create(floor(random_range(pre_calc1,pre_calc3)),floor(random_range(pre_calc2,pre_calc4)),objind(obj_npc_bear));
-world_obj_add(inst);
+world_obj_add_queue(inst);
 }}
 
 // Place Deers
@@ -110,7 +110,7 @@ chance = ds_map_find_value(ds_list_find_value(biome_data,biome_set),"Deer_Chance
 for(i=0;i<total;i++){
 if ( irandom(99)+1 <= chance ){
 inst = instance_create(floor(random_range(pre_calc1,pre_calc3)),floor(random_range(pre_calc2,pre_calc4)),objind(obj_npc_buck));
-world_obj_add(inst);
+world_obj_add_queue(inst);
 
 }}
 
@@ -152,7 +152,7 @@ switch(tile_id){
 
 case 100:{
 global.world_tiles[#r2,r1]=17;
-inst = instance_create((r2*128)+128,(r1*128)+128,obj_world_water2);world_obj_add(inst);
+inst = instance_create((r2*128)+128,(r1*128)+128,obj_world_water2);world_obj_add_queue(inst);
 break;}
 
 default:{

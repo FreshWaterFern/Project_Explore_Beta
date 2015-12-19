@@ -108,7 +108,7 @@ while(!file_text_eof(argument0))
         
         case "obj_archetype_basic":{
         inst = world_create_instance(real(temp_list[|1]),real(temp_list[|2]),objind(asset_get_index(temp_list[|0])),temp_list[|ds_list_size(temp_list)-1],real(temp_list[|3]))
-        world_obj_add(inst.id);
+        world_obj_add_queue(inst.id);
         break;}
         
         case "obj_archetype_storage":{
@@ -125,7 +125,7 @@ while(!file_text_eof(argument0))
         ds_list_add(list_cache,real(temp_list[|r]));}
         inst.c_stack = convert_list_to_grid_real(list_cache,width,height);
         ds_list_destroy(list_cache);
-        world_obj_add(inst.id);
+        world_obj_add_queue(inst.id);
         break;}
         
         case "obj_archetype_cooking":{
@@ -149,7 +149,7 @@ while(!file_text_eof(argument0))
         ds_list_destroy(list_cache);
         inst.is_enabled = real(temp_list[|ds_list_size(temp_list)-3]);
         inst.fuel_count = real(temp_list[|ds_list_size(temp_list)-2]);
-        world_obj_add(inst.id);
+        world_obj_add_queue(inst.id);
         break;}
     }
 ds_list_destroy(temp_list);

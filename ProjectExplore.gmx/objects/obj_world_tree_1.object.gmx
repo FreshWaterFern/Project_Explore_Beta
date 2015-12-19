@@ -93,7 +93,7 @@ ai_grid_remove_self(x-(sprite_width/2),y-(sprite_height/2),x+(sprite_width/2),y+
             <string>/// Add To World Data &amp; AI Grid
 height_depth = height1*4;
 ai_grid_add_self(x-(sprite_width/2),y-(sprite_height/2),x+(sprite_width/2),y+(sprite_height/2));
-world_obj_add(id);
+world_obj_add_queue(id);
 </string>
           </argument>
         </arguments>

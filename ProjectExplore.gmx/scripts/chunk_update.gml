@@ -1,7 +1,6 @@
 /// chunk_update(chunk_x,chunk_y)
 
 // Deactivate And Re-Activate Instances
-//if ( chunk_step == 0 )
 global.chunk_x = global.chunk_x;
 global.chunk_y = global.chunk_y;
 
@@ -41,21 +40,23 @@ file_delete(file_name);
 ds_list_add(file_list,file_name);
 
 x1 = i*1280;x2 = x1+1280;y1 = r*1280;y2 = y1+1280;
-show_debug_message("Clear objects and writing chunk file");
-with(all){                                          // Write and save objects to their chunk files \\
+with(all){          // Write and save objects to their chunk files \\
 if ( object_index != obj_col_attack_swing && obj_effect_parent != object_get_parent(object_index) && object_index != obj_game_render && object_index != obj_game_weather && object_index != obj_game && object_index != obj_volume && object_index != obj_player && object_index != obj_camera && object_index != obj_main_logic )
 {
 if ( x >= other.x1 && x < other.x2 && y >= other.y1 && y < other.y2 ){
 index = ds_list_find_index(global.world_obj_ind,id);
-file = file_text_open_append(file_name);
-if ( index != -1 ){file_text_write_string(file,global.world_obj_data[|index]);}else{
-file_text_write_string(file,convert_list_to_string(world_object_list_create(object_get_name(object_index),id),","));}
-file_text_writeln(file);
-file_text_close(file);
-world_obj_delete(id);
+if ( index != -1 ){
+ds_queue_enqueue(queue_chunk_write,global.world_obj_data[|index]);
+ds_list_delete(global.world_obj_data,index);
+ds_list_delete(global.world_obj_ind,index);
+}else{
+ds_queue_enqueue(queue_chunk_write,convert_list_to_string(world_object_list_create(object_get_name(object_index),id),","));
+}
 instance_destroy();
 
-}}}}
+}}}
+chunk_queue_handle(file_name);
+}
 
 }}}
 
@@ -69,7 +70,6 @@ if ( i < previous_chunk_x-1 or i > previous_chunk_x+1 or r < previous_chunk_y-1 
 
 if ( global.world_chunks[#i,r] ){
 file = file_text_open_read(file_name);
-show_debug_message("Opened File For Reading = "+file_name);
 world_generate_from_file(file);}
 else{
 world_generate_chunk_stay(i,r);

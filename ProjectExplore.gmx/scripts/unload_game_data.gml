@@ -62,26 +62,6 @@ control_cache = 0;
 control_set = 0;
 }
 
-size = array_length_1d(l_external_sprite);
-for(i=0;i<size;i++){
-if ( ds_exists(l_external_sprite[i],ds_type_list) ){
-ds_list_destroy(l_external_sprite[i]);
-}
-else{
-if ( ds_exists(l_external_sprite[i],ds_type_map) ){
-ds_map_destroy(l_external_sprite[i]);
-}
-else{
-if ( ds_exists(l_external_sprite[i],ds_type_grid) ){
-ds_grid_destroy(l_external_sprite[i]);
-}
-else{
-l_external_sprite[@ i] = 0;
-}
-}
-}
-}
-
-l_external_sprite = 0;
+image_system_cleanup();
 
 }
